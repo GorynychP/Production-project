@@ -8,7 +8,7 @@
 		// принимает тот факт, что разработчик может поставить тип any
 		"module": "ESNext",
 		// module различные способы модульной сборки
-		"target": "es5",
+		"target": "ES5",
 		// target В какую спецификацию компилируем: для поддержики большинства браузеров
 		"jsx": "react-jsx",
 		"allowJs": true,
@@ -18,7 +18,11 @@
 		// common js как с обычными пакетами с помощью import (require() module.exports)- common js
 		"esModuleInterop": true,
 		//allowSyntheticDefaultImports позволяет писать обычный import вместо * as
-		"allowSyntheticDefaultImports": true
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": ".",
+		"paths": {
+			"*": ["./src/*"]
+		}
 	},
 	"ts-node": {
 		"compilerOptions": {
