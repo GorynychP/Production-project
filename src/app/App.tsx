@@ -1,6 +1,6 @@
 import './styles/index.scss';
 import { useTheme } from './providers/ThemeProvider';
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/Navbar';
 import { Suspense } from 'react';
 import { AppRouter } from './providers/router';
