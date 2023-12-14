@@ -3,5 +3,8 @@
 	"О сайте": "About the site",
 	"Загрузка": "Loading",
 	"Перeвод": "Translate",
-	"Страница не найдена": "Page not found"
+	"Страница не найдена": "Page not found",
+	"Произошла непредвиденная ошибка": "An unexpected error has occurred",
+	"Обновить страницу": "Refresh the page",
+	"Ошибка": "Error"
 }
