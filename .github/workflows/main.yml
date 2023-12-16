@@ -16,7 +16,7 @@ jobs:
     steps:
           uses: action/checkout@v2
         - name: Starting Node.js ${{matrix.node-version}}
-          user: action/setup-node@v1
+          uses: action/setup-node@v1
           with:
               node-version: ${{matrix.node-version}}
         - name: instal module
