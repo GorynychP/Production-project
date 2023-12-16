@@ -1,10 +1,11 @@
 name: Organization CI
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
-    push:
-        branches: [main]
-    pull_request:
-        branches: [main]
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
 jobs:
   GitHub-Actions:
     runs-on: ubuntu-latest
@@ -12,16 +13,15 @@ jobs:
       matrix:
         node-version: [20.x]
     steps:
-      uses: action/checkout@v4
-    - name: Starting Node.js ${{matrix.node-version}}
-      uses: action/setup-node@v1
-      with:
-        node-version: ${{matrix.node-version}}
-    - name: instal module
-      run: npm install
-    - name: build production project
-      run: npm run build:prod
-    - name: unit testing
-      run: npm run test:unit
-    - name: instal module
-      run: npm install
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Starting Node.js ${{matrix.node-version}}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{matrix.node-version}}
+      - name: Install dependencies
+        run: npm install
+      - name: Build production project
+        run: npm run build:prod
+      - name: Unit testing
+        run: npm run test:unit
