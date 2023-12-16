@@ -31,9 +31,3 @@ jobs:
         run: npm run storybook:build
       - name: screenshot testing
         run: npm run test:ui:ci
-      - name: Visual Diff
-        uses: action-heroes/image-diff-action@v2
-        with:
-        base-image-path: .loki/reference
-        new-image-path: .loki/current
-        diff-image-output-path: .loki/difference
