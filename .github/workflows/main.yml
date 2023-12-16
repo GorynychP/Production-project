@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@latest
       - name: Starting Node.js ${{matrix.node-version}}
         uses: actions/setup-node@v4
         with:
@@ -28,4 +30,4 @@ jobs:
       - name: build storybook
         run: npm run storybook:build
       - name: screenshot testing
-        run: node --trace-warnings npm run test:ui:ci
+        run: npm run test:ui:ci
