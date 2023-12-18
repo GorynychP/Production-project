@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -13,7 +13,7 @@ export const BugButton = () => {
 		}
 	}, [error]);
 	return (
-		<Button theme={ThemeButton.OUTLINE} onClick={onThrow}>
+		<Button theme={ButtonTheme.OUTLINE} onClick={onThrow}>
 			{t('Ошибка')}
 		</Button>
 	);

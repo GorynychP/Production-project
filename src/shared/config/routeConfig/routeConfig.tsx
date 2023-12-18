@@ -1,3 +1,4 @@
+import React from 'react';
 import { AboutPageAsync } from 'pages/AboutPage';
 import { MainPageAsync } from 'pages/MainPage';
 import { NotFoundPage } from 'pages/NotFoundPage';

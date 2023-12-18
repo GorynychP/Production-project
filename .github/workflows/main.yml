@@ -23,9 +23,13 @@ jobs:
         run: npm install
       - name: Build production project
         run: npm run build:prod
+        if: always()
       - name: Unit testing
         run: npm run test:unit
+        if: always()
       - name: build storybook
         run: npm run storybook:build
+        if: always()
       - name: Screenshot testing
         run: npm run test:ui:ci
+        if: always()
