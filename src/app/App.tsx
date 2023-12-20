@@ -1,14 +1,12 @@
 import { useTheme } from './providers/ThemeProvider';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/Navbar';
-import { Suspense, useState } from 'react';
+import { Suspense } from 'react';
 import { AppRouter } from './providers/router';
 import { Sidebar } from 'widgets/Sidebars';
-import { Button } from 'shared/ui/Button/Button';
 
 const App = () => {
 	const { theme } = useTheme();
-	const [isOpen, setIsOpen] = useState(false);
 	return (
 		<div className={classNames('app', {}, [theme])}>
 			<Suspense fallback="">
