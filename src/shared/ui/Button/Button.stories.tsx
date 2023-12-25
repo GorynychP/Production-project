@@ -32,6 +32,7 @@ export const Clear: Story = {
 		theme: ButtonTheme.CLEAR,
 	},
 };
+
 export const OutlineSizeM: Story = {
 	args: {
 		children: 'Text',
@@ -39,6 +40,15 @@ export const OutlineSizeM: Story = {
 		size: ButtonSize.M,
 	},
 };
+export const DisabletSizeM: Story = {
+	args: {
+		children: 'Text',
+		theme: ButtonTheme.OUTLINE,
+		size: ButtonSize.M,
+		disabled: true,
+	},
+};
+
 export const OutlineSizeL: Story = {
 	args: {
 		children: 'Text',

@@ -16,7 +16,6 @@
 }
 
 .outline {
-	font-size: var(--font-line-m);
 	border: 1px solid var(--primary-color);
 	color: var(--primary-color);
 }
@@ -57,4 +56,9 @@
 }
 .size_xl {
 	font: var(--font-xl);
+}
+
+.disabled {
+	cursor: default;
+	opacity: 0.5;
 }
