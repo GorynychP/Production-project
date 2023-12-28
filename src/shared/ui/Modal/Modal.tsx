@@ -3,8 +3,6 @@ import cls from './Modal.module.scss';
 import React, { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import { Portal } from '../Portal/Portal';
 import { useTheme } from 'app/providers/ThemeProvider';
-import { useDispatch } from 'react-redux';
-import { loginAction } from 'features/AuthByUsername/model/slice/loginSlice';
 
 interface ModalProps {
 	className?: string;
@@ -19,8 +17,6 @@ export const Modal = (props: ModalProps) => {
 	const { theme } = useTheme();
 	const [isClosing, setIsClosing] = useState(false);
 	const [isMounted, setIsMounted] = useState(false);
-	const dispatch = useDispatch();
-
 	useEffect(() => {
 		if (isOpen) {
 			setIsMounted(true);
@@ -35,7 +31,6 @@ export const Modal = (props: ModalProps) => {
 			timerRef.current = setTimeout(() => {
 				onClose();
 				setIsClosing(false);
-				dispatch(loginAction.errorReset());
 			}, 300);
 		}
 	}, [onClose]);
