@@ -12,7 +12,7 @@ import {
 	getLoginLoading,
 	getLoginPassword,
 	getLoginEmail,
-} from '../../model/selectors/getLoginState';
+} from '../../model/selectors';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import {

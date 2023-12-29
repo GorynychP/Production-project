@@ -15,6 +15,6 @@ describe('Sidebar', () => {
 		expect(screen.getByTestId('sidebar')).toHaveClass('Sidebar');
 		fireEvent.click(toggleBtn);
 		expect(screen.getByTestId('sidebar')).toHaveClass('collapsed');
-		screen.debug();
+		// screen.debug();
 	});
 });
