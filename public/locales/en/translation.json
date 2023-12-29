@@ -1,6 +1,7 @@
 {
 	"Главная": "Main",
 	"О сайте": "About the site",
+	"Профиль": "Profile",
 	"Загрузка": "Loading",
 	"Перeвод": "Translate",
 	"Страница не найдена": "Page not found",
@@ -8,6 +9,7 @@
 	"Обновить страницу": "Refresh the page",
 	"Ошибка": "Error",
 	"Войти": "Login",
+	"Выйти": "Logout",
 	"Введите username": "Input username",
 	"Введите пароль": "Input password",
 	"Форма авторизации": "Authorization form",

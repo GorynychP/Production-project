@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { memo, useCallback, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { useTranslation } from 'react-i18next';
@@ -13,7 +13,7 @@ import { userAction } from 'entities/User';
 interface NavbarProps {
 	className?: string;
 }
-export const Navbar = ({ className }: NavbarProps) => {
+export const Navbar = memo(({ className }: NavbarProps) => {
 	const { t } = useTranslation();
 	const [isOpenModal, setIsOpenModal] = useState(false);
 	const dispatch = useDispatch();
@@ -57,9 +57,7 @@ export const Navbar = ({ className }: NavbarProps) => {
 			>
 				{t('Войти')}
 			</Button>
-			{isOpenModal && (
-				<LoginModal isOpen={isOpenModal} onClose={onCloseModal} />
-			)}
+			{isOpenModal && <LoginModal isOpen={isOpenModal} onClose={onCloseModal} />}
 		</div>
 	);
-};
+});
