@@ -8,13 +8,13 @@ export function useTheme(): UseThemeResult {
 	const { theme, setTheme } = useContext(ThemeContext);
 	const changeTheme = () => {
 		const newTeme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
-		setTheme(newTeme);
+		setTheme?.(newTeme);
 		// document.body.className = newTeme;
 		localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTeme);
 	};
 
 	return {
-		theme,
+		theme: theme || Theme.LIGHT,
 		changeTheme,
 	};
 }

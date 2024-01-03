@@ -2,6 +2,6 @@ export interface LoginSchema {
 	email?: string;
 	username: string;
 	password: string;
-	lsLoading: boolean;
+	isLoading: boolean;
 	error?: string;
 }

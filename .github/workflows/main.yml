@@ -1,35 +1,35 @@
-name: Organization CI
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+# name: Organization CI
+# run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+# on:
+#   push:
+#     branches: [main]
+#   pull_request:
+#     branches: [main]
 
-jobs:
-  GitHub-Actions:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [20.0.0]
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Starting Node.js ${{matrix.node-version}}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{matrix.node-version}}
-      - name: Install dependencies
-        run: npm install
-      - name: Build production project
-        run: npm run build:prod
-        if: always()
-      - name: Unit testing
-        run: npm run test:unit
-        if: always()
-      - name: build storybook
-        run: npm run storybook:build
-        if: always()
-      - name: Screenshot testing
-        run: npm run test:ui:ci
-        if: always()
+# jobs:
+#   GitHub-Actions:
+#     runs-on: ubuntu-latest
+#     strategy:
+#       matrix:
+#         node-version: [20.0.0]
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
+#       - name: Starting Node.js ${{matrix.node-version}}
+#         uses: actions/setup-node@v2
+#         with:
+#           node-version: ${{matrix.node-version}}
+#       - name: Install dependencies
+#         run: npm install
+#       - name: Build production project
+#         run: npm run build:prod
+#         if: always()
+#       - name: Unit testing
+#         run: npm run test:unit
+#         if: always()
+      # - name: build storybook
+      #   run: npm run storybook:build
+      #   if: always()
+      # - name: Screenshot testing
+      #   run: npm run test:ui:ci
+      #   if: always()

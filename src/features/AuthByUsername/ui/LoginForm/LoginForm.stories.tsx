@@ -23,6 +23,7 @@ type Story = StoryObj<typeof LoginForm>;
 
 export const Normal: Story = {
 	args: {},
+	decorators: [StoreDecorator({})],
 };
 
 export const Dark: Story = {
@@ -46,7 +47,7 @@ export const Loading: Story = {
 	args: {},
 	decorators: [
 		StoreDecorator({
-			loginForm: { lsLoading: true },
+			loginForm: { isLoading: true },
 		}),
 	],
 };

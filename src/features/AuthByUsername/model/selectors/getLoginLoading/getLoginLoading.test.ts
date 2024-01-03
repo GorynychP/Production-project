@@ -1,4 +1,3 @@
-import { DeepPartial } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { getLoginLoading } from './getLoginLoading';
 
@@ -6,7 +5,7 @@ describe('getLoginLoading.test', () => {
 	test('should return loading-true', () => {
 		const state: DeepPartial<StateSchema> = {
 			loginForm: {
-				lsLoading: true,
+				isLoading: true,
 			},
 		};
 		expect(getLoginLoading(state as StateSchema)).toEqual(true);
