@@ -4,7 +4,9 @@ import { MainPageAsync } from 'pages/MainPage';
 import { NotFoundPage } from 'pages/NotFoundPage';
 import { RouteProps } from 'react-router-dom';
 import { ProfilePageAsync } from 'pages/ProfilePage/ui/ProfilePageAsync';
-
+type AppRoutesPorops = RouteProps & {
+	authOnly?: boolean;
+};
 export enum AppRoutes {
 	MAIN = 'main',
 	ABOUT = 'about',
@@ -19,7 +21,7 @@ export const RoutePath: Record<AppRoutes, string> = {
 	[AppRoutes.NOT_FOUND]: '*',
 };
 
-export const routeConfige: Record<AppRoutes, RouteProps> = {
+export const routeConfige: Record<AppRoutes, AppRoutesPorops> = {
 	[AppRoutes.MAIN]: {
 		path: RoutePath.main,
 		element: <MainPageAsync />,
@@ -31,6 +33,7 @@ export const routeConfige: Record<AppRoutes, RouteProps> = {
 	[AppRoutes.PROFILE]: {
 		path: RoutePath.profile,
 		element: <ProfilePageAsync />,
+		authOnly: true,
 	},
 	[AppRoutes.NOT_FOUND]: {
 		path: RoutePath.not_found,

@@ -2,10 +2,10 @@ import { useTheme } from './providers/ThemeProvider';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/Navbar';
 import { Suspense, useEffect } from 'react';
-import { AppRouter } from './providers/router';
 import { Sidebar } from 'widgets/Sidebars';
 import { useDispatch } from 'react-redux';
 import { userAction } from 'entities/User';
+import { AppRouter } from './providers/router';
 
 const App = () => {
 	const { theme } = useTheme();

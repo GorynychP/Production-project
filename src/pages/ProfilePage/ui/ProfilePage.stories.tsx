@@ -8,6 +8,7 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDeco
 const meta: Meta<typeof ProfilePage> = {
 	title: 'pages/ProfilePage',
 	component: ProfilePage,
+	decorators: [StoreDecorator({})],
 };
 
 export default meta;
@@ -15,10 +16,9 @@ type Story = StoryObj<typeof ProfilePage>;
 
 export const Normal: Story = {
 	args: {},
-	decorators: [StoreDecorator({})],
 };
 
 export const Dark: Story = {
 	args: {},
-	decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({})],
+	decorators: [ThemeDecorator(Theme.DARK)],
 };

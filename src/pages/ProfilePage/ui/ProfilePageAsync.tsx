@@ -7,3 +7,4 @@ export const ProfilePageAsync = lazy(
 			setTimeout(() => res(import('./ProfilePage')), 500);
 		}),
 );
+// export const ProfilePageAsync = lazy(() => import('./ProfilePage'));
