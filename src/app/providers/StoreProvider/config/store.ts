@@ -10,6 +10,7 @@ import { userReducer } from 'entities/User';
 import { createReducerManager } from './reducerManager';
 import { $api } from 'shared/api/api';
 import { NavigateOptions, To } from 'react-router-dom';
+import { USER_LOCALSTORAGEG_KEY } from 'shared/const/localStorage';
 
 export function createReduxStore(
 	initialState?: StateSchema,
@@ -22,7 +23,6 @@ export function createReduxStore(
 	};
 
 	const reducerManager = createReducerManager(rootReducers);
-
 	const store = configureStore({
 		reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
 		devTools: __IS_DEV__,

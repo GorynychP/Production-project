@@ -50,7 +50,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
 			</div>
 		);
 	}
-	console.log('error', error);
 	if (error) {
 		return (
 			<div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>

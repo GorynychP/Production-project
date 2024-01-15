@@ -8,7 +8,6 @@ export const fetchProfileData = createAsyncThunk<Profile, void, ThankConfig<stri
 	async (_, thunkAPI) => {
 		try {
 			const response = await thunkAPI.extra.api.get<Profile>('/profile');
-
 			if (!response.data) {
 				throw new Error();
 			}

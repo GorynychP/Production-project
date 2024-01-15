@@ -7,6 +7,7 @@ import {
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {
 	ProfileCard,
+	ValidateProfileErrors,
 	fetchProfileData,
 	profileAction,
 	profileReducer,
@@ -18,10 +19,14 @@ import {
 	getProfileForm,
 	getProfileLoading,
 	getProfileReadonly,
+	getProfileValidateErrors,
 } from 'entities/Profile/model/selectors';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { StateSchema } from 'app/providers/StoreProvider';
+import { getUserAuthData } from 'entities/User/model/selectors/getAuthData/getUserAuthData';
 
 interface ProfilePageProps {
 	className?: string;
@@ -36,9 +41,18 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
 	const error = useSelector(getProfileError);
 	const isLoading = useSelector(getProfileLoading);
 	const readonly = useSelector(getProfileReadonly);
-
+	const validateErrors = useSelector(getProfileValidateErrors);
+	const validateErrorTranslate = {
+		[ValidateProfileErrors.SERVER_ERROR]: t('CЕРВЕРНАЯ ОШИБКА'),
+		[ValidateProfileErrors.INCORECT_AGE]: t('НЕКОРРЕКТНЫЙ ВОЗРАСТ'),
+		[ValidateProfileErrors.INCORECT_USERNAME]: t('НЕКОРРЕКТНЫЙ USERNAME'),
+		[ValidateProfileErrors.INCORECT_USER_DATA]: t('ИМЯ И ФАМИЛИЯ ОБЯЗАТЕЛЬНЫ'),
+		[ValidateProfileErrors.NO_DATA]: t('ДАННЫЕ НЕ УКАЗАНЫ'),
+	};
 	useEffect(() => {
-		dispatch(fetchProfileData());
+		if (__PROJECT__ !== 'storybook') {
+			dispatch(fetchProfileData());
+		}
 	}, [dispatch]);
 	const onChangeUsername = useCallback(
 		(value?: string) => {
@@ -100,6 +114,14 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
 		<DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
 			<div className={classNames('', {}, [className])}>
 				<ProfilePageHeader />
+				{validateErrors?.length &&
+					validateErrors.map((err) => (
+						<Text
+							key={err}
+							theme={TextTheme.ERROR}
+							title={validateErrorTranslate[err]}
+						/>
+					))}
 				<ProfileCard
 					data={formData}
 					isLoading={isLoading}

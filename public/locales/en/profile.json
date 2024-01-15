@@ -11,5 +11,10 @@
 	"Ваша страна": "Your country",
 	"Ссылка на аватар": "Link to the avatar",
 	"Произошла ошибка при загрузки профиля:": "An error occurred while uploading the profile:",
-	"Перезагрузитье пожалуйста страницу": "Please reload the page"
+	"Перезагрузитье пожалуйста страницу": "Please reload the page",
+	"CЕРВЕРНАЯ ОШИБКА": "SERVER ERROR",
+	"НЕКОРРЕКТНЫЙ USERNAME": "INCORECT USERNAME",
+	"ИМЯ И ФАМИЛИЯ ОБЯЗАТЕЛЬНЫ": "INCORECT USER DATA",
+	"ДАННЫЕ НЕ УКАЗАНЫ": "NO DATA",
+	"НЕКОРРЕКТНЫЙ ВОЗРАСТ": "INCORECT AGE"
 }

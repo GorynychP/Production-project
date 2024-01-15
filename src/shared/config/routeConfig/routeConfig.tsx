@@ -4,7 +4,7 @@ import { MainPageAsync } from 'pages/MainPage';
 import { NotFoundPage } from 'pages/NotFoundPage';
 import { RouteProps } from 'react-router-dom';
 import { ProfilePageAsync } from 'pages/ProfilePage/ui/ProfilePageAsync';
-type AppRoutesPorops = RouteProps & {
+export type AppRoutesPorops = RouteProps & {
 	authOnly?: boolean;
 };
 export enum AppRoutes {
