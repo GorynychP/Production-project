@@ -7,11 +7,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { userAction } from 'entities/User';
 import { AppRouter } from './providers/router';
 import { getUserAuthInited } from 'entities/User/model/selectors/getUserAuthInited/getUserAuthInited';
+import { getUserAuthData } from 'entities/User/model/selectors/getAuthData/getUserAuthData';
 
 const App = () => {
 	const { theme } = useTheme();
 	const inited = useSelector(getUserAuthInited);
-	console.log('inited', inited);
 	const dispatch = useDispatch();
 	useEffect(() => {
 		dispatch(userAction.initAuthData());

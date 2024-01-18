@@ -5,9 +5,7 @@ import { buildLoaders } from './buildLoaders';
 import { buildResolvers } from './buildResolvers';
 import { buildDevServer } from './buildDevServer';
 
-export function buildWebpackConfig(
-	options: BuildOptions,
-): webpack.Configuration {
+export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
 	const { mode, paths, isDev } = options;
 
 	return {
@@ -17,6 +15,7 @@ export function buildWebpackConfig(
 			filename: '[name].[contenthash].js',
 			path: paths.build, // путь билда
 			clean: true, // служит для очищение лишиних билдеров
+			publicPath: '/',
 		}, // настройки куда и как мы будем делать сборку приложения
 		plugins: buildPlugins(options),
 		module: {
