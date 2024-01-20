@@ -27,6 +27,8 @@ import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { getUserAuthData } from 'entities/User/model/selectors/getAuthData/getUserAuthData';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
 
 interface ProfilePageProps {
 	className?: string;
@@ -36,7 +38,7 @@ const initialReducers: ReducersList = { profile: profileReducer };
 const ProfilePage = ({ className }: ProfilePageProps) => {
 	const { t } = useTranslation('profile');
 	const dispatch = useAppDispatch();
-
+	const { id } = useParams<{ id: string }>();
 	const formData = useSelector(getProfileForm);
 	const error = useSelector(getProfileError);
 	const isLoading = useSelector(getProfileLoading);
@@ -49,11 +51,11 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
 		[ValidateProfileErrors.INCORECT_USER_DATA]: t('ИМЯ И ФАМИЛИЯ ОБЯЗАТЕЛЬНЫ'),
 		[ValidateProfileErrors.NO_DATA]: t('ДАННЫЕ НЕ УКАЗАНЫ'),
 	};
-	useEffect(() => {
-		if (__PROJECT__ !== 'storybook') {
-			dispatch(fetchProfileData());
+	useInitialEffect(() => {
+		if (id) {
+			dispatch(fetchProfileData(id));
 		}
-	}, [dispatch]);
+	});
 	const onChangeUsername = useCallback(
 		(value?: string) => {
 			dispatch(profileAction.updateProfile({ username: value || '' }));

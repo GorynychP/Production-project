@@ -37,8 +37,8 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
 	const initialReducers: ReducersList = { articleDetails: articleDetailsReducer };
 	const article = useSelector(getArticleDetailsData);
 	const isLoading = useSelector(getArticleDetailsLoading);
-	// const isLoading = true;
 	const error = useSelector(getArticleDetailsError);
+
 	useEffect(() => {
 		if (__PROJECT__ !== 'storybook') {
 			dispatch(fetchArticleById(id));
