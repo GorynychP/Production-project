@@ -18,12 +18,12 @@ describe('fetchProfileData.test', () => {
 	test('success fetch data', async () => {
 		const thunk = new TestAsyncThunk(fetchProfileData);
 
-		thunk.api.get.mockReturnValue(Promise.resolve({ data }));
+		thunk.api.get.mockReturnValue(Promise.resolve({ data: [data] }));
 		const result = await thunk.callThunk('1');
 
 		expect(thunk.api.get).toHaveBeenCalled(); // Проверка, что запрос был выполнен
 		expect(result.meta.requestStatus).toBe('fulfilled'); // Проверка, статус  fulfilled прошел
-		expect(result.payload).toEqual(data);
+		expect(result.payload).toEqual([data]);
 	});
 
 	test('error fetch data', async () => {

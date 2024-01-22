@@ -5,7 +5,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { CommentCard } from './CommentCard';
 
 const meta: Meta<typeof CommentCard> = {
-	title: 'entities/CommentCard',
+	title: 'entities/Comment/CommentCard',
 	component: CommentCard,
 };
 

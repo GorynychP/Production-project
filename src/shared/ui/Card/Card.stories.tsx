@@ -2,20 +2,21 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Loader } from './Loader';
-
-const meta: Meta<typeof Loader> = {
-	title: 'shared/Loader',
-	component: Loader,
+import { Card } from './Card';
+import { Text } from '../Text/Text';
+const meta: Meta<typeof Card> = {
+	title: 'shared/Card',
+	component: Card,
 };
 
 export default meta;
-type Story = StoryObj<typeof Loader>;
+type Story = StoryObj<typeof Card>;
 
 export const Normal: Story = {
-	args: {},
+	args: { children: <Text title="JavaScript" text="text text" /> },
 };
+
 export const Dark: Story = {
-	args: {},
+	args: { children: <Text title="JavaScript" text="text text" /> },
 	decorators: [ThemeDecorator(Theme.DARK)],
 };

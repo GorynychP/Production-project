@@ -12,6 +12,11 @@ export const articleDataTest: Article = {
 	subtitle: 'Что нового в JS за 2024 год?',
 	img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
 	views: 1022,
+	user: {
+		id: '1',
+		username: 'Vasia',
+		avatar: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+	},
 	createdAt: '16.01.2024',
 	type: [ArticleType.IT],
 	blocks: [

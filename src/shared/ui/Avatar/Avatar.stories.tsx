@@ -5,10 +5,6 @@ import AvatarImg from './storybook.jpg';
 const meta: Meta<typeof Avatar> = {
 	title: 'shared/Avatar',
 	component: Avatar,
-	// parameters: {
-	// 	layout: 'centered',
-	// },
-	// tags: ['autodocs'],
 };
 
 export default meta;

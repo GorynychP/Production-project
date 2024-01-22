@@ -12,6 +12,11 @@ const article: Article = {
 	img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
 	views: 1022,
 	createdAt: '16.01.2024',
+	user: {
+		id: '1',
+		username: 'Vasia',
+		avatar: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+	},
 	type: [ArticleType.IT],
 	blocks: [
 		{
@@ -76,7 +81,7 @@ const article: Article = {
 };
 
 const meta: Meta<typeof ArticleDetails> = {
-	title: 'entities/ArticleDetails',
+	title: 'entities/Article/ArticleDetails',
 	component: ArticleDetails,
 };
 

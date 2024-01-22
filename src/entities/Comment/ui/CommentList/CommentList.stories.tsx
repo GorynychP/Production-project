@@ -6,7 +6,7 @@ import { CommentList } from './CommentList';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 
 const meta: Meta<typeof CommentList> = {
-	title: 'entities/CommentList',
+	title: 'entities/Comment/CommentList',
 	component: CommentList,
 };
 
