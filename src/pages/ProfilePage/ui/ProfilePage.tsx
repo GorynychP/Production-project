@@ -27,6 +27,7 @@ import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useParams } from 'react-router-dom';
+import { Page } from 'shared/ui/Page/Page';
 
 interface ProfilePageProps {
 	className?: string;
@@ -112,7 +113,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
 
 	return (
 		<DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
-			<div className={classNames('', {}, [className])}>
+			<Page className={classNames('', {}, [className])}>
 				<ProfilePageHeader />
 				{validateErrors?.length &&
 					validateErrors.map((err) => (
@@ -136,7 +137,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
 					onChangeCurrency={onChangeCurrency}
 					onChangeСountry={onChangeСountry}
 				/>
-			</div>
+			</Page>
 		</DynamicModuleLoader>
 	);
 };

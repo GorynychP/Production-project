@@ -17,7 +17,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
 		setCollapsed((prev) => !prev);
 	};
 	return (
-		<div
+		<menu
 			data-testid="sidebar"
 			className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
 		>
@@ -36,6 +36,6 @@ export const Sidebar = ({ className }: SidebarProps) => {
 					<SidebarItem key={item.path} item={item} collapsed={collapsed} />
 				))}
 			</div>
-		</div>
+		</menu>
 	);
 };

@@ -46,7 +46,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 	}
 
 	return (
-		<div className={classNames(cls.Navbar, {}, [className])}>
+		<header className={classNames(cls.Navbar, {}, [className])}>
 			<ThemeSwitcher />
 			<LangSwitcher className={cls.lang} />
 
@@ -58,6 +58,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 				{t('Войти')}
 			</Button>
 			{isOpenModal && <LoginModal isOpen={isOpenModal} onClose={onCloseModal} />}
-		</div>
+		</header>
 	);
 });

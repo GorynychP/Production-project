@@ -5,7 +5,7 @@ import { getProfileData } from '../../selectors';
 // 'https://863e9faeb060e6b2.mokky.dev/auth'
 
 export const fetchProfileData = createAsyncThunk<Profile, string, ThankConfig<string>>(
-	'prifile/fetchProfileData',
+	'profile/fetchProfileData',
 	async (profileId, thunkAPI) => {
 		try {
 			const response = await thunkAPI.extra.api.get<Profile>(`/profile/${profileId}`);

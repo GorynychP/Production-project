@@ -23,6 +23,7 @@ import { AddCommentForm } from 'features/addCommentForm';
 import { addCommentForArticle } from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
 import { Button } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Page } from 'shared/ui/Page/Page';
 
 interface ArticleDetailsPageProps {
 	className?: string;
@@ -50,21 +51,21 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 	};
 	if (!id) {
 		return (
-			<div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+			<Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
 				Статья не найдена
-			</div>
+			</Page>
 		);
 	}
 
 	return (
 		<DynamicModuleLoader reducers={articleCommentsReducer} removeAfterUnmount>
-			<div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+			<Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
 				<Button onClick={onBackToList}>{t('Назад к списку')}</Button>
 				<ArticleDetails id={id} />
 				<Text className={cls.commentTitle} title={t('Комментарии')}></Text>
 				<AddCommentForm onSendComment={onSendComment} />
 				<CommentList isLoading={isLoading} comments={comments} />
-			</div>
+			</Page>
 		</DynamicModuleLoader>
 	);
 };

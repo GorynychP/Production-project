@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ArticleViewSelector.module.scss';
 import { useTranslation } from 'react-i18next';
@@ -21,27 +21,25 @@ const viewTypes = [
 		icon: <TiledImg />,
 	},
 ];
-export const ArticleViewSelector = ({
-	className,
-	view,
-	onViewClick,
-}: ArticleViewSelectorProps) => {
-	const { t } = useTranslation();
-	const onClick = (newView: ArticleView) => () => {
-		onViewClick?.(newView);
-	};
-	return (
-		<div className={classNames(cls.ArticleViewSelector, {}, [className])}>
-			{viewTypes.map((viewType) => (
-				<Button
-					key={viewType.view}
-					theme={ButtonTheme.CLEAR}
-					onClick={onClick(viewType.view)}
-					className={classNames('', { [cls.selected]: viewType.view === view })}
-				>
-					{viewType.icon}
-				</Button>
-			))}
-		</div>
-	);
-};
+export const ArticleViewSelector = memo(
+	({ className, view, onViewClick }: ArticleViewSelectorProps) => {
+		const { t } = useTranslation();
+		const onClick = (newView: ArticleView) => () => {
+			onViewClick?.(newView);
+		};
+		return (
+			<div className={classNames(cls.ArticleViewSelector, {}, [className])}>
+				{viewTypes.map((viewType) => (
+					<Button
+						key={viewType.view}
+						theme={ButtonTheme.CLEAR}
+						onClick={onClick(viewType.view)}
+						className={classNames('', { [cls.selected]: viewType.view === view })}
+					>
+						{viewType.icon}
+					</Button>
+				))}
+			</div>
+		);
+	},
+);

@@ -16,12 +16,14 @@ import {
 	articlePageReducer,
 	getArticle,
 } from '../../model/slices/articlePageSlice';
-import { fetchArticleList } from '../../model/services/fetchArticlesList/fetchArticleList';
 import {
 	getArticlePageError,
 	getArticlePageIsLoading,
 	getArticlePageView,
 } from '../../model/selectors/articlesPageSelector';
+import { Page } from 'shared/ui/Page/Page';
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { initedArticlesPage } from 'pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage';
 
 interface ArticlesPageProps {
 	className?: string;
@@ -34,24 +36,31 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
 	const isLoading = useSelector(getArticlePageIsLoading);
 	const error = useSelector(getArticlePageError);
 	const view = useSelector(getArticlePageView);
-	console.log('article', article);
 	const dispatch = useAppDispatch();
 	useInitialEffect(() => {
-		dispatch(fetchArticleList());
-		dispatch(articlePageAction.initState());
+		dispatch(initedArticlesPage());
 	});
+
 	const onChangeView = useCallback(
 		(view: ArticleView) => {
 			dispatch(articlePageAction.setView(view));
 		},
 		[dispatch],
 	);
+
+	const onLoadNextPage = useCallback(() => {
+		dispatch(fetchNextArticlesPage());
+	}, [dispatch]);
+
 	return (
-		<DynamicModuleLoader reducers={reducers}>
-			<div className={classNames(cls.ArticlesPage, {}, [className])}>
+		<DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
+			<Page
+				onScrollEnd={onLoadNextPage}
+				className={classNames(cls.ArticlesPage, {}, [className])}
+			>
 				<ArticleViewSelector view={view} onViewClick={onChangeView} />
 				<ArticleList isLoading={isLoading} view={view} articles={article} />
-			</div>
+			</Page>
 		</DynamicModuleLoader>
 	);
 };
