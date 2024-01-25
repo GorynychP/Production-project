@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThankConfig } from 'app/providers/StoreProvider';
 import { User, userAction } from 'entities/User';
-import { USER_LOCALSTORAGEG_KEY } from 'shared/const/localStorage';
+import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
 // 'https://863e9faeb060e6b2.mokky.dev/auth'
 interface LoginByUsernameProps {
 	email?: string;
@@ -19,7 +19,7 @@ export const loginByUsername = createAsyncThunk<
 		if (!response.data) {
 			throw new Error();
 		}
-		localStorage.setItem(USER_LOCALSTORAGEG_KEY, JSON.stringify(response.data));
+		localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data));
 		thunkAPI.dispatch(userAction.setAuthData(response.data));
 		thunkAPI.extra.navigate?.('./about');
 		return response.data;

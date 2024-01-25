@@ -58,9 +58,10 @@
 	.image {
 		width: 200px;
 		height: 200px;
+		object-fit: cover;
 	}
 
-	.infiWrapper {
+	.infoWrapper {
 		display: flex;
 		align-items: center;
 	}

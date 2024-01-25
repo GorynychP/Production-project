@@ -76,7 +76,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
 					<Text className={cls.date} text={article?.createdAt} />
 				</div>
 
-				<div className={cls.infiWrapper}>
+				<div className={cls.infoWrapper}>
 					{types}
 					{views}
 				</div>
