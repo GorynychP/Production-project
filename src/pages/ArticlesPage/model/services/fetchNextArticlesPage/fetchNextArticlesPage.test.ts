@@ -1,10 +1,10 @@
 import { TestAsyncThunk } from 'shared/lib/test/TestAcyncThunk/TestAcyncThunk';
 import { fetchNextArticlesPage } from './fetchNextArticlesPage';
-import { ArticleView } from 'entities/Article';
+import { ArticleSortField, ArticleView } from 'entities/Article';
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
+import { ArticleType } from 'entities/Article/model/types/article';
 
 jest.mock('../fetchArticlesList/fetchArticlesList.ts');
-
 describe('fetchNextArticlesPage.test', () => {
 	test('success', async () => {
 		const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
@@ -12,10 +12,14 @@ describe('fetchNextArticlesPage.test', () => {
 				page: 2,
 				ids: [],
 				entities: {},
-				limit: 5,
+				limit: 9,
 				isLoading: false,
 				hasMore: true,
 				view: ArticleView.BIG,
+				order: 'asc',
+				search: '',
+				sort: ArticleSortField.CREATED,
+				type: ArticleType.ALL,
 				_inited: false,
 			},
 		});
@@ -31,10 +35,14 @@ describe('fetchNextArticlesPage.test', () => {
 				page: 2,
 				ids: [],
 				entities: {},
-				limit: 5,
+				limit: 9,
 				isLoading: false,
 				hasMore: false,
 				view: ArticleView.BIG,
+				order: 'asc',
+				search: '',
+				sort: ArticleSortField.CREATED,
+				type: ArticleType.ALL,
 				_inited: false,
 			},
 		});

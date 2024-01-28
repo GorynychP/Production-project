@@ -81,7 +81,7 @@ const article: Article = {
 };
 
 const meta: Meta<typeof ArticleDetailsPage> = {
-	title: 'pages/ArticleDetailsPage',
+	title: 'pages/Article/ArticleDetailsPage',
 	component: ArticleDetailsPage,
 	decorators: [StoreDecorator({ articleDetails: { article: article } })],
 };

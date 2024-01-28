@@ -21,9 +21,9 @@
 			"title": "Javascript news",
 			"subtitle": "Что нового в JS за 2024 год?",
 			"img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-			"views": 1022,
+			"views": 112,
 			"userId": "1",
-			"createdAt": "16.01.2024",
+			"createdAt": "16.02.2024",
 			"type": ["IT"],
 			"blocks": [
 				{
@@ -81,20 +81,20 @@
 					"type": "TEXT",
 					"title": "Заголовок этого блока",
 					"paragraphs": [
-						"JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы."
+						"JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы, ."
 					]
 				}
 			]
 		},
 		{
 			"id": "2",
-			"title": "Javascript news",
+			"title": "Kotlin news",
 			"subtitle": "Что нового в JS за 2024 год?",
 			"img": "https://bulutistan.com/blog/wp-content/uploads/2023/03/kotlin-nedir-kotlin-uygulama-gelistirme-evreninde-isletmelerin-hangi-problemlerini-cozebilir.jpeg",
-			"views": 1022,
+			"views": 222,
 			"userId": "1",
-			"createdAt": "16.01.2024",
-			"type": ["IT"],
+			"createdAt": "16.03.2023",
+			"type": ["ECONOMICS"],
 			"blocks": [
 				{
 					"id": "1",
@@ -161,9 +161,9 @@
 			"title": "PHP news",
 			"subtitle": "Что нового в PHP за 2024 год?",
 			"img": "https://kinsta.com/wp-content/uploads/2021/02/php-logo-official-1100px.png",
-			"views": 1022,
+			"views": 14122,
 			"userId": "1",
-			"createdAt": "16.01.2024",
+			"createdAt": "16.04.2023",
 			"type": ["IT"],
 			"blocks": [
 				{
@@ -231,10 +231,10 @@
 			"title": "Python news",
 			"subtitle": "Что нового в Python за 2024 год?",
 			"img": "https://miro.medium.com/v2/resize:fit:1400/1*ycIMlwgwicqlO6PcFRA-Iw.png",
-			"views": 1022,
+			"views": 6022,
 			"userId": "1",
-			"createdAt": "16.01.2024",
-			"type": ["IT"],
+			"createdAt": "16.05.2023",
+			"type": ["IT", "SCIENCE"],
 			"blocks": [
 				{
 					"id": "1",
@@ -301,10 +301,10 @@
 			"title": "Java news",
 			"subtitle": "Что нового в Java за 2024 год?",
 			"img": "https://www.dijitalportal.com/wp-content/uploads/java.jpg",
-			"views": 1022,
+			"views": 10224,
 			"userId": "1",
-			"createdAt": "16.01.2024",
-			"type": ["IT"],
+			"createdAt": "16.05.2022",
+			"type": ["SCIENCE"],
 			"blocks": [
 				{
 					"id": "1",
@@ -371,9 +371,9 @@
 			"title": "C++ news",
 			"subtitle": "Что нового в C++ за 2024 год?",
 			"img": "https://miro.medium.com/v2/da:true/resize:fit:1200/0*ZpjhBs0gR5oSd3Il",
-			"views": 1022,
+			"views": 10322,
 			"userId": "1",
-			"createdAt": "16.01.2024",
+			"createdAt": "16.12.2021",
 			"type": ["IT"],
 			"blocks": [
 				{
@@ -441,9 +441,9 @@
 			"title": "Ruby news",
 			"subtitle": "Что нового в Ruby за 2024 год?",
 			"img": "https://www.codingtxt.com/media/blog_images/ruby_banner.png",
-			"views": 1022,
+			"views": 6322,
 			"userId": "1",
-			"createdAt": "16.01.2024",
+			"createdAt": "06.09.2023",
 			"type": ["IT"],
 			"blocks": [
 				{
@@ -511,9 +511,9 @@
 			"title": "GO news",
 			"subtitle": "Что нового в GO за 2024 год?",
 			"img": "https://www.thewindowsclub.com/wp-content/uploads/2020/11/Google-Go-Programming.jpg",
-			"views": 1022,
+			"views": 22,
 			"userId": "1",
-			"createdAt": "16.01.2024",
+			"createdAt": "27.01.2024",
 			"type": ["IT"],
 			"blocks": [
 				{
@@ -581,9 +581,9 @@
 			"title": "C# news",
 			"subtitle": "Что нового в C# за 2024 год?",
 			"img": "https://assets-global.website-files.com/5aa7081220a301f2a3644f3b/5c363b1f43fb7bbc94f002c3_Website_Reporting%20Language%20Icons_Csharp.png",
-			"views": 1022,
+			"views": 522,
 			"userId": "1",
-			"createdAt": "16.01.2024",
+			"createdAt": "11.01.2024",
 			"type": ["IT"],
 			"blocks": [
 				{

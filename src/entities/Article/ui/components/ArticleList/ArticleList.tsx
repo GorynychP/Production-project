@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Article, ArticleView } from '../../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
+import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
 
 interface ArticleListProps {
 	className?: string;
@@ -33,6 +34,19 @@ export const ArticleList = memo((props: ArticleListProps) => {
 			/>
 		);
 	};
+
+	if (!isLoading && !articles.length) {
+		return (
+			<div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+				<Text
+					title={t('Статьи не найдены')}
+					align={TextAlign.CENTER}
+					size={TextSize.L}
+				/>
+			</div>
+		);
+	}
+
 	return (
 		<div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
 			{articles.length > 0 ? articles.map(renderArticleItem) : null}
