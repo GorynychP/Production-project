@@ -13,5 +13,30 @@
 	"Введите username": "Input username",
 	"Введите пароль": "Input password",
 	"Форма авторизации": "Authorization form",
-	"Вы ввели неверный логин или пароль": "You have entered an incorrect username or password"
+	"Вы ввели неверный логин или пароль": "You have entered an incorrect username or password",
+	"Статьи": "Articles",
+	"Редактировать": "Edit",
+	"Произошла ошибка при загрузке статьи": {
+		"": "Произошла ошибка при загрузке статьи."
+	},
+	"Комментарии отсутствуют": "There are no comments",
+	"Введите текст комментария": "Enter the comment text",
+	"Отправить": "Send",
+	"Поиск": "Search",
+	"возрастанию": "ascending",
+	"по": "in",
+	"убыванию": "descending",
+	"Айти": "IT",
+	"Экономика": "Economics",
+	"Все статьи": "All articles",
+	"Наука": "Science",
+	"Сортировать ПО": "Sort BY",
+	"дате создания": "created date",
+	"названию": "name",
+	"просмотрам": "views",
+	"Создание новой статьи": "Create new article",
+	"Редактирование статьи с ID = ": "Edit article with ID = ",
+	"Создать статью": "Create article",
+	"Все категории": "All categories",
+	"Статьи не найдены": "Articles not found"
 }

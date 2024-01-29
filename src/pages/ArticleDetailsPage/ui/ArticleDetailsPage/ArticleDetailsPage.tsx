@@ -1,5 +1,5 @@
 import React, { memo, useCallback } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import cls from './ArticleDetailsPage.module.scss';
@@ -11,8 +11,6 @@ import {
 	DynamicModuleLoader,
 	ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Button } from 'shared/ui/Button/Button';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { ArticleDetails, ArticleList } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
 import { AddCommentForm } from 'features/addCommentForm';
@@ -33,6 +31,7 @@ import {
 
 import { getArticleDetailsCommentsLoading } from '../../model/selectors/commentsSelectors/commentsSelectors';
 import { getArticleDetailsRecommendLoading } from '../../model/selectors/recommendationSelectors/recommendationSelectors';
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
 interface ArticleDetailsPageProps {
 	className?: string;
@@ -50,10 +49,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 	const articleRecommend = useSelector(getArticleRecommend.selectAll);
 	const commentsIsLoading = useSelector(getArticleDetailsCommentsLoading);
 	const recommendIsLoading = useSelector(getArticleDetailsRecommendLoading);
-	const navigate = useNavigate();
-	const onBackToList = useCallback(() => {
-		navigate(RoutePath.articles);
-	}, [navigate]);
 
 	useInitialEffect(() => {
 		dispatch(fetchCommentsByArticleId(id));
@@ -73,9 +68,9 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 	return (
 		<DynamicModuleLoader reducers={articleCommentsReducer} removeAfterUnmount>
 			<Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-				<Button onClick={onBackToList}>{t('Назад к списку')}</Button>
+				<ArticleDetailsPageHeader />
 				<ArticleDetails id={id} />
-				<Text className={cls.commentTitle} title={t('Рекомендации')}></Text>
+				<Text className={cls.commentTitle} title={t('Рекомендуем')}></Text>
 				<ArticleList
 					target={'_blank'}
 					className={cls.recommendList}

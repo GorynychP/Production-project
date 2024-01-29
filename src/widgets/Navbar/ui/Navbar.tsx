@@ -9,6 +9,7 @@ import cls from './Navbar.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData } from 'entities/User/model/selectors/getAuthData/getUserAuthData';
 import { userAction } from 'entities/User';
+import { Text, TextSize, TextTheme } from 'shared/ui/Text/Text';
 
 interface NavbarProps {
 	className?: string;
@@ -32,6 +33,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 	if (authData) {
 		return (
 			<div className={classNames(cls.Navbar, {}, [className])}>
+				<Text className={cls.appName} theme={TextTheme.INVERTED} title={'KEEK'} />
+
 				<ThemeSwitcher />
 				<LangSwitcher className={cls.lang} />
 				<Button
@@ -47,6 +50,12 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
 	return (
 		<header className={classNames(cls.Navbar, {}, [className])}>
+			<Text
+				className={cls.appName}
+				size={TextSize.L}
+				theme={TextTheme.INVERTED}
+				title={'KEEK'}
+			/>
 			<ThemeSwitcher />
 			<LangSwitcher className={cls.lang} />
 
