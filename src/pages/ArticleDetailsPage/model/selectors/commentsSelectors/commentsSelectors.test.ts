@@ -2,9 +2,9 @@ import { StateSchema } from 'app/providers/StoreProvider';
 import {
 	getArticleDetailsCommentsError,
 	getArticleDetailsCommentsLoading,
-} from './articleDetailsComments';
+} from './commentsSelectors';
 
-describe('articleDetailsComments.test', () => {
+describe('commentsSelectors.test', () => {
 	test('should return error', () => {
 		const state: DeepPartial<StateSchema> = {
 			articleDetailsComments: { error: 'error' },

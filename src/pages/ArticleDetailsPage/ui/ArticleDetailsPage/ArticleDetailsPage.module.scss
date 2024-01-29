@@ -4,3 +4,9 @@
 .commentTitle {
 	margin-top: 40px;
 }
+.recommendList {
+	margin-top: 20px;
+	flex-wrap: nowrap;
+	overflow: hidden;
+	overflow-x: auto;
+}
