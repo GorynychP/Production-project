@@ -7,52 +7,53 @@ import { Button } from 'shared/ui/Button/Button';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import {
-	DynamicModuleLoader,
-	ReducersList,
+    DynamicModuleLoader,
+    ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {
-	getCommentFormError,
-	getCommentFormText,
+    getCommentFormError,
+    getCommentFormText,
 } from '../../model/selectors/addCommentFormSelectors';
 import {
-	addCommentFormAction,
-	addCommentFormReducer,
+    addCommentFormAction,
+    addCommentFormReducer,
 } from '../../model/slice/addCommentFormSlice';
 
 export interface AddCommentFormProps {
-	className?: string;
-	onSendComment: (text: string) => void;
+    className?: string;
+    onSendComment: (text: string) => void;
 }
 
 const reducer: ReducersList = { addCommentForm: addCommentFormReducer };
 const AddCommentForm = ({ className, onSendComment }: AddCommentFormProps) => {
-	const { t } = useTranslation();
-	const dispatch = useAppDispatch();
-	const text = useSelector(getCommentFormText);
-	const error = useSelector(getCommentFormError);
-	const onCommentTextChange = useCallback(
-		(value: string) => {
-			dispatch(addCommentFormAction.setCommentText(value));
-		},
-		[dispatch],
-	);
+    const { t } = useTranslation();
+    const dispatch = useAppDispatch();
+    const text = useSelector(getCommentFormText);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const error = useSelector(getCommentFormError);
+    const onCommentTextChange = useCallback(
+        (value: string) => {
+            dispatch(addCommentFormAction.setCommentText(value));
+        },
+        [dispatch],
+    );
 
-	const onSendHandler = useCallback(() => {
-		onSendComment(text || '');
-		onCommentTextChange('');
-	}, [onSendComment, onCommentTextChange, text]);
-	return (
-		<DynamicModuleLoader reducers={reducer}>
-			<div className={classNames(cls.AddCommentForm, {}, [className])}>
-				<Input
-					className={cls.input}
-					value={text}
-					onChange={onCommentTextChange}
-					placeholder={t('Введите текст комментария')}
-				/>
-				<Button onClick={onSendHandler}>{t('Отправить')}</Button>
-			</div>
-		</DynamicModuleLoader>
-	);
+    const onSendHandler = useCallback(() => {
+        onSendComment(text || '');
+        onCommentTextChange('');
+    }, [onSendComment, onCommentTextChange, text]);
+    return (
+        <DynamicModuleLoader reducers={reducer}>
+            <div className={classNames(cls.AddCommentForm, {}, [className])}>
+                <Input
+                    className={cls.input}
+                    value={text}
+                    onChange={onCommentTextChange}
+                    placeholder={t('Введите текст комментария')}
+                />
+                <Button onClick={onSendHandler}>{t('Отправить')}</Button>
+            </div>
+        </DynamicModuleLoader>
+    );
 };
 export default AddCommentForm;

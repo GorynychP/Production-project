@@ -1,9 +1,10 @@
 import { lazy } from 'react';
 
 export const ArticlesPageAsync = lazy(
-	() =>
-		new Promise((res) => {
-			//@ts-ignore
-			setTimeout(() => res(import('./ArticlesPage')), 400);
-		}),
+    () =>
+        new Promise(resolve => {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-expect-error
+            setTimeout(() => resolve(import('./ArticlesPage')), 400);
+        }),
 );

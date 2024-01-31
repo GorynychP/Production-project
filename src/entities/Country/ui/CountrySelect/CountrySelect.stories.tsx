@@ -1,15 +1,15 @@
-import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
-import { CountrySelect } from './CountrySelect';
+import React from 'react'
+import type { Meta, StoryObj } from '@storybook/react'
+import { CountrySelect } from './CountrySelect'
 
 const meta: Meta<typeof CountrySelect> = {
-	title: 'entities/Select/CountrySelect',
-	component: CountrySelect,
-};
+    title: 'entities/Select/CountrySelect',
+    component: CountrySelect
+}
 
-export default meta;
+export default meta
 type Story = StoryObj<typeof CountrySelect>;
 
 export const Primary: Story = {
-	args: {},
-};
+    args: {}
+}

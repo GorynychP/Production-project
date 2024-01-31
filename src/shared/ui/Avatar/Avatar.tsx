@@ -1,6 +1,6 @@
-import React, { useMemo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './Avatar.module.scss';
+import React, { useMemo } from 'react'
+import { classNames } from 'shared/lib/classNames/classNames'
+import cls from './Avatar.module.scss'
 interface AvatarProps {
 	className?: string;
 	src?: string;
@@ -9,16 +9,16 @@ interface AvatarProps {
 }
 
 export const Avatar = (props: AvatarProps) => {
-	const { className, src, size, alt } = props;
-	const styles = useMemo(() => {
-		return { width: size || 100, height: size || 100 };
-	}, [size]);
-	return (
-		<img
-			src={src}
-			style={styles}
-			alt={alt}
-			className={classNames(cls.Avatar, {}, [className])}
-		></img>
-	);
-};
+    const { className, src, size, alt } = props
+    const styles = useMemo(() => {
+        return { width: size || 100, height: size || 100 }
+    }, [size])
+    return (
+        <img
+            src={src}
+            style={styles}
+            alt={alt}
+            className={classNames(cls.Avatar, {}, [className])}
+        ></img>
+    )
+}

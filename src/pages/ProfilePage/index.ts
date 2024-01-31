@@ -1,1 +1,1 @@
-export * from './ui/ProfilePageAsync';
+export * from './ui/ProfilePageAsync'

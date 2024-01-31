@@ -1,9 +1,8 @@
 import {
-	CombinedState,
-	Reducer,
-	ReducersMapObject,
-	configureStore,
-	getDefaultMiddleware,
+    CombinedState,
+    Reducer,
+    ReducersMapObject,
+    configureStore,
 } from '@reduxjs/toolkit';
 import { StateSchema } from './StateSchema';
 import { userReducer } from 'entities/User';
@@ -12,33 +11,33 @@ import { $api } from 'shared/api/api';
 import { scrollSaveReducer } from 'features/ScrollSave';
 
 export function createReduxStore(
-	initialState?: StateSchema,
-	asyncReducers?: ReducersMapObject<StateSchema>,
+    initialState?: StateSchema,
+    asyncReducers?: ReducersMapObject<StateSchema>,
 ) {
-	const rootReducers: ReducersMapObject<StateSchema> = {
-		...asyncReducers,
-		user: userReducer,
-		scrollSave: scrollSaveReducer,
-	};
+    const rootReducers: ReducersMapObject<StateSchema> = {
+        ...asyncReducers,
+        user: userReducer,
+        scrollSave: scrollSaveReducer,
+    };
 
-	const reducerManager = createReducerManager(rootReducers);
-	const store = configureStore({
-		reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
-		devTools: __IS_DEV__,
-		preloadedState: initialState,
-		middleware: (getDefaultMiddleware) =>
-			getDefaultMiddleware({
-				thunk: {
-					extraArgument: {
-						api: $api,
-					},
-				},
-			}),
-	});
-	//@ts-ignore
-	store.reducerManager = reducerManager;
+    const reducerManager = createReducerManager(rootReducers);
+    const store = configureStore({
+        reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
+        devTools: __IS_DEV__,
+        preloadedState: initialState,
+        middleware: getDefaultMiddleware =>
+            getDefaultMiddleware({
+                thunk: {
+                    extraArgument: {
+                        api: $api,
+                    },
+                },
+            }),
+    });
+    // @ts-expect-error ...
+    store.reducerManager = reducerManager;
 
-	return store;
+    return store;
 }
 
 // // Infer the `RootState` and `AppDispatch` types from the store itself

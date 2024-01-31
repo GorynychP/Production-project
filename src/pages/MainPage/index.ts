@@ -1,1 +1,1 @@
-export * from './ui/MainPageAsync';
+export * from './ui/MainPageAsync'

@@ -1,22 +1,22 @@
-import React from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import './Loader.scss';
+import React from 'react'
+import { classNames } from 'shared/lib/classNames/classNames'
+import './Loader.scss'
 
 interface LoaderProps {
 	className?: string;
 }
 
 export const Loader = ({ className }: LoaderProps) => {
-	return (
-		<div className={classNames('lds-roller', {}, [className])}>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-		</div>
-	);
-};
+    return (
+        <div className={classNames('lds-roller', {}, [className])}>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    )
+}

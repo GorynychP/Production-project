@@ -1,1 +1,1 @@
-export * from './ui/AboutPageAsync';
+export * from './ui/AboutPageAsync'

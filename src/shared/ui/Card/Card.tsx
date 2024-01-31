@@ -1,6 +1,6 @@
-import React, { HTMLAttributes, ReactNode } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './Card.module.scss';
+import React, { HTMLAttributes, ReactNode } from 'react'
+import { classNames } from 'shared/lib/classNames/classNames'
+import cls from './Card.module.scss'
 
 export enum CardTheme {
 	NORMAL = 'normal',
@@ -13,14 +13,14 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const Card = ({
-	className,
-	children,
-	theme = CardTheme.NORMAL,
-	...otherProps
+    className,
+    children,
+    theme = CardTheme.NORMAL,
+    ...otherProps
 }: CardProps) => {
-	return (
-		<div className={classNames(cls.Card, {}, [className, cls[theme]])} {...otherProps}>
-			{children}
-		</div>
-	);
-};
+    return (
+        <div className={classNames(cls.Card, {}, [className, cls[theme]])} {...otherProps}>
+            {children}
+        </div>
+    )
+}

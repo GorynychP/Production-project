@@ -9,10 +9,10 @@
 		"module": "ESNext",
 		// module различные способы модульной сборки
 		"target": "ES5",
-		// target В какую спецификацию компилируем: для поддержики большинства браузеров
+		// target В какую спецификацию компилируем: для поддержки большинства браузеров
 		"jsx": "react-jsx",
 		"allowJs": true,
-		//allowJs позволяет обрабатывать не тлько TS файлы но и JS
+		//allowJs позволяет обрабатывать не только TS файлы но и JS
 		"moduleResolution": "node",
 		//esModuleInterop позволяет работать с пакетами, которые используют
 		// common js как с обычными пакетами с помощью import (require() module.exports)- common js

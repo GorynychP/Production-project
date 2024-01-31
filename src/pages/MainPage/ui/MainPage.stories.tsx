@@ -3,28 +3,22 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import MainPage from './MainPage';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 
 const meta: Meta<typeof MainPage> = {
-	title: 'pages/MainPage',
-	component: MainPage,
-	// parameters: {
-	// 	layout: 'centered',
-	// },
-	// tags: ['autodocs'],
-
-	argTypes: {
-		// backgroundColor: { control: 'color' },
-	},
+    title: 'pages/MainPage',
+    component: MainPage,
+    decorators: [StoreDecorator()],
 };
 
 export default meta;
 type Story = StoryObj<typeof MainPage>;
 
 export const Normal: Story = {
-	args: {},
+    args: {},
 };
 
 export const Dark: Story = {
-	args: {},
-	decorators: [ThemeDecorator(Theme.DARK)],
+    args: {},
+    decorators: [ThemeDecorator(Theme.DARK)],
 };

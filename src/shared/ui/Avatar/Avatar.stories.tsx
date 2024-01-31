@@ -1,29 +1,29 @@
-import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
-import { Avatar } from './Avatar';
-import AvatarImg from './storybook.jpg';
+import React from 'react'
+import type { Meta, StoryObj } from '@storybook/react'
+import { Avatar } from './Avatar'
+import AvatarImg from './storybook.jpg'
 const meta: Meta<typeof Avatar> = {
-	title: 'shared/Avatar',
-	component: Avatar,
-};
+    title: 'shared/Avatar',
+    component: Avatar
+}
 
-export default meta;
+export default meta
 type Story = StoryObj<typeof Avatar>;
 
 export const Primary: Story = {
-	args: {
-		src: AvatarImg,
-		size: 150,
-	},
-};
+    args: {
+        src: AvatarImg,
+        size: 150
+    }
+}
 export const Small: Story = {
-	args: {
-		src: AvatarImg,
-		size: 50,
-	},
-};
+    args: {
+        src: AvatarImg,
+        size: 50
+    }
+}
 export const NotIMG: Story = {
-	args: {
-		alt: 'тут должен быть аватар',
-	},
-};
+    args: {
+        alt: 'тут должен быть аватар'
+    }
+}

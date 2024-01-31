@@ -7,22 +7,22 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import cls from './ThemeSwitcher.module.scss';
 
 interface ThemeSwitcherProps {
-	className?: string;
+    className?: string;
 }
 
 export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
-	const { theme, changeTheme } = useTheme();
-	return (
-		<Button
-			className={classNames(cls.ThemeSwitcher, {}, [className])}
-			theme={ButtonTheme.CLEAR}
-			onClick={changeTheme}
-		>
-			{theme === Theme.LIGHT ? (
-				<DarkIcon className={cls.image} />
-			) : (
-				<LightIcon className={cls.image} />
-			)}
-		</Button>
-	);
+    const { theme, changeTheme } = useTheme();
+    return (
+        <Button
+            className={classNames(cls.ThemeSwitcher, {}, [className])}
+            theme={ButtonTheme.CLEAR}
+            onClick={changeTheme}
+        >
+            {theme === Theme.LIGHT ? (
+                <DarkIcon className={cls.image} />
+            ) : (
+                <LightIcon className={cls.image} />
+            )}
+        </Button>
+    );
 });
