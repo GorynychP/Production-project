@@ -20,11 +20,18 @@ module.exports = {
         // project: './tsconfig.json',
         sourceType: 'module',
     },
-    plugins: ['react', '@typescript-eslint', 'react-hooks'],
+    plugins: ['react', '@typescript-eslint', 'react-hooks', 'path-ch-plg'],
     rules: {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
-        indent: ['error', 4],
+        indent: [
+            'error',
+            4,
+            {
+                SwitchCase: 1,
+                ignoredNodes: ['ConditionalExpression'],
+            },
+        ],
         'no-tabs': 0,
         'react/jsx-filename-extension': [
             2,
@@ -59,6 +66,7 @@ module.exports = {
         'react/no-array-index-key': 'off',
         'arrow-body-style': 'off',
         'react/display-name': 'off',
+        'path-ch-plg/path-checker': 'error',
     },
     globals: {
         __IS_DEV__: true,
