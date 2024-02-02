@@ -1,25 +1,23 @@
 .Sidebar {
-	height: calc(100vh - var(--navbar-height));
-	width: var(--sidebar-width);
-	background: var(--inverted-bg-color);
+    height: calc(100vh - var(--navbar-height));
+    width: var(--sidebar-width);
+    background: var(--inverted-bg-color);
 
-	position: relative;
-	transition: width 0.3s;
+    position: relative;
+    transition: width 0.3s;
 }
 
 .collapsedBtn {
-	position: absolute;
-	right: -15px;
-	top: 45%;
+    position: absolute;
+    right: -15px;
+    top: 45%;
 }
 
 .items {
-	margin-top: 20px;
-	margin-left: 30px;
-	display: flex;
-	flex-direction: column;
+    margin-top: 20px;
+    margin-left: 30px;
 }
 
 .collapsed {
-	width: var(--sidebar-width-collapsed);
+    width: var(--sidebar-width-collapsed);
 }

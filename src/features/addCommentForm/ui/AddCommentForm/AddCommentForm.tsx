@@ -18,6 +18,7 @@ import {
     addCommentFormAction,
     addCommentFormReducer,
 } from '../../model/slice/addCommentFormSlice';
+import { HStack } from 'shared/ui/Stack';
 
 export interface AddCommentFormProps {
     className?: string;
@@ -44,7 +45,12 @@ const AddCommentForm = ({ className, onSendComment }: AddCommentFormProps) => {
     }, [onSendComment, onCommentTextChange, text]);
     return (
         <DynamicModuleLoader reducers={reducer}>
-            <div className={classNames(cls.AddCommentForm, {}, [className])}>
+            <HStack
+                max
+                justify="between"
+                align="center"
+                className={classNames(cls.AddCommentForm, {}, [className])}
+            >
                 <Input
                     className={cls.input}
                     value={text}
@@ -52,7 +58,7 @@ const AddCommentForm = ({ className, onSendComment }: AddCommentFormProps) => {
                     placeholder={t('Введите текст комментария')}
                 />
                 <Button onClick={onSendHandler}>{t('Отправить')}</Button>
-            </div>
+            </HStack>
         </DynamicModuleLoader>
     );
 };
