@@ -1,60 +1,53 @@
-import React from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
-import { Text, TextSize, TextTheme } from './Text'
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { Theme } from 'app/providers/ThemeProvider'
+import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+import { Text, TextSize, TextTheme } from './Text';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from 'app/providers/ThemeProvider';
 
 const meta: Meta<typeof Text> = {
     title: 'shared/Text',
     component: Text,
-    // parameters: {
-    // 	layout: 'centered',
-    // },
-    // tags: ['autodocs'],
-    argTypes: {
-        // backgroundColor: { control: 'color' },
-    }
-}
+};
 
-export default meta
+export default meta;
 type Story = StoryObj<typeof Text>;
 
 export const Primary: Story = {
     args: {
         title: 'Title ',
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio delectus voluptas ut autem sunt esse architecto tempore repellat similique rerum.'
-    }
-}
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio delectus voluptas ut autem sunt esse architecto tempore repellat similique rerum.',
+    },
+};
 export const Dark: Story = {
     args: {
         title: 'Title ',
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio delectus voluptas ut autem sunt esse architecto tempore repellat similique rerum.'
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio delectus voluptas ut autem sunt esse architecto tempore repellat similique rerum.',
     },
-    decorators: [ThemeDecorator(Theme.DARK)]
-}
+    decorators: [ThemeDecorator(Theme.DARK)],
+};
 export const Error: Story = {
     args: {
         title: 'Title ',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio delectus voluptas ut autem sunt esse architecto tempore repellat similique rerum.',
-        theme: TextTheme.ERROR
-    }
-}
-export const OnliTitle: Story = {
+        theme: TextTheme.ERROR,
+    },
+};
+export const OnlyTitle: Story = {
     args: {
-        title: 'Title '
-    }
-}
-export const OnliText: Story = {
+        title: 'Title ',
+    },
+};
+export const OnlyText: Story = {
     args: {
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio delectus voluptas ut autem sunt esse architecto tempore repellat similique rerum.'
-    }
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio delectus voluptas ut autem sunt esse architecto tempore repellat similique rerum.',
+    },
     // decorators: [ThemeDecorator(Theme.DARK)],
-}
+};
 
 export const SizeL: Story = {
     args: {
         size: TextSize.L,
         title: 'Title ',
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio delectus voluptas ut autem sunt esse architecto tempore repellat similique rerum.'
-    }
-}
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio delectus voluptas ut autem sunt esse architecto tempore repellat similique rerum.',
+    },
+};
