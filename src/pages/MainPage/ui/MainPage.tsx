@@ -3,8 +3,15 @@ import { BugButton } from 'app/providers/ErrorBoundary';
 import { useTranslation } from 'react-i18next';
 import { Page } from 'widgets/Page/Page';
 import { ListBox } from 'shared/ui/ListBox/ListBox';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { Button } from 'shared/ui/Button/Button';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { useSelector } from 'react-redux';
+import { getUserAuthData } from 'entities/User';
+import cls from './MainPage.module.scss';
 const MainPage = () => {
     const { t } = useTranslation('main');
+    const authData = useSelector(getUserAuthData);
     return (
         <Page>
             <div>{t('Главная страница')}</div>
@@ -20,6 +27,18 @@ const MainPage = () => {
                 value={undefined}
                 defaultValue="Название по дефпвапавп"
             ></ListBox>
+            <Dropdown
+                className={cls.dropdown}
+                trigger={<Button>Меню</Button>}
+                items={[
+                    {
+                        content: t('Профиль'),
+                        href: RoutePath.profile + authData?.id,
+                    },
+                    { content: t('Выйти'), onClick: () => {} },
+                ]}
+                direction="bottom left"
+            />
         </Page>
     );
 };

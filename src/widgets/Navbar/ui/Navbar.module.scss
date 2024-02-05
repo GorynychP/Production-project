@@ -1,21 +1,26 @@
 .Navbar {
-	width: 100%;
-	height: var(--navbar-height);
-	background: var(--inverted-bg-color);
-	display: flex;
-	align-items: center;
-	padding: 20px;
+    width: 100%;
+    height: var(--navbar-height);
+    background: var(--inverted-bg-color);
+    display: flex;
+    align-items: center;
+    padding: 20px;
 }
 
-.links {
-	display: flex;
-	margin-left: auto;
+.links,
+.dropdown {
+    display: flex;
+    margin-left: auto;
 }
 
 .lang {
-	margin-left: 20px;
+    margin-left: 20px;
 }
 .appName {
-	width: 200px;
-	margin-left: 15px;
+    width: 200px;
+    margin-left: 15px;
+}
+
+.avatar {
+    cursor: pointer;
 }
