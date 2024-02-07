@@ -75,8 +75,9 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                             target={target}
                             to={RoutePath.article_details + article?.id}
                         >
-                            <Button>{t('Читать далее ...')}</Button> {views}
+                            <Button>{t('Читать далее ...')}</Button>
                         </AppLink>
+                        {views}
                     </div>
                 </Card>
             </div>

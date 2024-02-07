@@ -29,7 +29,7 @@ const MainPage = () => {
             ></ListBox>
             <Dropdown
                 className={cls.dropdown}
-                trigger={<Button>Меню</Button>}
+                trigger={<Button >Меню</Button>}
                 items={[
                     {
                         content: t('Профиль'),
@@ -37,7 +37,7 @@ const MainPage = () => {
                     },
                     { content: t('Выйти'), onClick: () => {} },
                 ]}
-                direction="bottom left"
+                direction="bottom right"
             />
         </Page>
     );

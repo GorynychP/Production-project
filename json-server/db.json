@@ -822,6 +822,12 @@
       "userId": "2",
       "text": "Вот это да!",
       "id": "Gr7DnA9"
+    },
+    {
+      "articleId": "3",
+      "userId": "2",
+      "text": "Новый коммент",
+      "id": "VUepm3w"
     }
   ],
   "posts": [
@@ -866,7 +872,7 @@
       "currency": "EUR",
       "country": "Turkey",
       "city": "Istambul",
-      "username": "user",
+      "username": "Ivan",
       "avatar": "https://pics.craiyon.com/2023-08-06/7bc5b0ccdd4d4576a03ecd52815ae1bc.webp"
     }
   ]
