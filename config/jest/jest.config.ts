@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-import path from 'path'
+import path from 'path';
 
 module.exports = {
     globals: { __IS_DEV__: true, __API__: '', __PROJECT__: 'jest' },
@@ -19,9 +19,21 @@ module.exports = {
     setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
     moduleNameMapper: {
         '\\.(css|scss)$': 'identity-obj-proxy',
-        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx')
+        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
     },
-    transformIgnorePatterns: ['/node_modules/(?!(axios)/)']
+    transformIgnorePatterns: ['/node_modules/(?!(axios)/)'],
+    reporters: [
+        'default',
+        [
+            'jest-html-reporters',
+            {
+                publicPath: '<rootDir>/reports/unit',
+                filename: 'report.html',
+                openReport: false,
+                inlineSource: true,
+            },
+        ],
+    ],
     // All imported modules in your tests should be mocked automatically
     // automock: false,
     // Stop running tests after `n` failures
@@ -182,4 +194,4 @@ module.exports = {
 
     // Whether to use watchman for file crawling
     // watchman: true,
-}
+};

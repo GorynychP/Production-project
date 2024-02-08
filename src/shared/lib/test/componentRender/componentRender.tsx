@@ -1,19 +1,29 @@
-import React, { ReactNode } from 'react'
-import { render } from '@testing-library/react'
-import { MemoryRouter } from 'react-router-dom'
-import { StateSchema } from 'app/providers/StoreProvider/config/StateSchema'
-import { StoreProvider } from 'app/providers/StoreProvider'
+import React, { ReactNode } from 'react';
+import { render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
+import { StateSchema } from 'app/providers/StoreProvider/config/StateSchema';
+import { StoreProvider } from 'app/providers/StoreProvider';
+import { ReducersMapObject } from '@reduxjs/toolkit';
 
 export interface componentRenderOptions {
-	route?: string;
-	initialState?: DeepPartial<StateSchema>;
+    route?: string;
+    initialState?: DeepPartial<StateSchema>;
+    asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>;
 }
 
-export function componentRender (component: ReactNode, options: componentRenderOptions = {}) {
-    const { route = '/', initialState } = options
+export function componentRender(
+    component: ReactNode,
+    options: componentRenderOptions = {},
+) {
+    const { route = '/', initialState, asyncReducers } = options;
     return render(
         <MemoryRouter initialEntries={[route]}>
-            <StoreProvider initialState={initialState}>{component}</StoreProvider>
-        </MemoryRouter>
-    )
+            <StoreProvider
+                asyncReducers={asyncReducers}
+                initialState={initialState}
+            >
+                {component}
+            </StoreProvider>
+        </MemoryRouter>,
+    );
 }
