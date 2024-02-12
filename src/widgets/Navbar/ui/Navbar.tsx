@@ -8,7 +8,7 @@ import { LoginModal } from 'features/AuthByUsername';
 import cls from './Navbar.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData } from 'entities/User/model/selectors/getAuthData/getUserAuthData';
-import { userAction } from 'entities/User';
+import { isUserAdmin, isUserModerator, userAction } from 'entities/User';
 import { Text, TextSize, TextTheme } from 'shared/ui/Text/Text';
 import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
@@ -22,6 +22,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     const [isOpenModal, setIsOpenModal] = useState(false);
     const dispatch = useDispatch();
     const authData = useSelector(getUserAuthData);
+    const isAdmin = useSelector(isUserAdmin);
+    const isModerator = useSelector(isUserModerator);
 
     const onCloseModal = useCallback(() => {
         setIsOpenModal(false);
@@ -32,7 +34,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     const onLogout = useCallback(() => {
         dispatch(userAction.logout());
     }, [dispatch]);
-
+    const isAdminPanelAvailable = isAdmin || isModerator;
     if (authData) {
         return (
             <div className={classNames(cls.Navbar, {}, [className])}>
@@ -55,6 +57,14 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                         />
                     }
                     items={[
+                        ...(isAdminPanelAvailable
+                            ? [
+                                {
+                                    content: t('Админка'),
+                                    href: RoutePath.admin_panel,
+                                },
+                            ]
+                            : []),
                         {
                             content: t('Профиль'),
                             href: RoutePath.profile + authData.id,

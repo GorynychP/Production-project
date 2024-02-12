@@ -1,25 +1,31 @@
-import React from 'react'
-import { AboutPageAsync } from 'pages/AboutPage'
-import { MainPageAsync } from 'pages/MainPage'
-import { NotFoundPage } from 'pages/NotFoundPage'
-import { RouteProps } from 'react-router-dom'
-import { ProfilePageAsync } from 'pages/ProfilePage'
-import { ArticlesPageAsync } from 'pages/ArticlesPage'
-import { ArticleDetailsPageAsync } from 'pages/ArticleDetailsPage'
-import { ArticleEditPageAsync } from 'pages/ArticleEditPage'
+import React from 'react';
+import { NotFoundPage } from 'pages/NotFoundPage';
+import { RouteProps } from 'react-router-dom';
+import { MainPage } from 'pages/MainPage';
+import { AboutPage } from 'pages/AboutPage';
+import { ProfilePage } from 'pages/ProfilePage';
+import { ArticleDetailsPage } from 'pages/ArticleDetailsPage';
+import { ArticleEditPage } from 'pages/ArticleEditPage';
+import { ArticlesPage } from 'pages/ArticlesPage';
+import { AdminPanelPage } from 'pages/AdminPanelPage';
+import { UserRole } from 'entities/User/model/types/user';
+import { ForbiddenPage } from 'pages/ForbiddenPage';
 
 export type AppRoutesProps = RouteProps & {
-	authOnly?: boolean;
+    authOnly?: boolean;
+    roles?: UserRole[];
 };
 export enum AppRoutes {
-	MAIN = 'main',
-	ABOUT = 'about',
-	PROFILE = 'profile',
-	ARTICLES = 'articles',
-	ARTICLE_DETAILS = 'article_details',
-	ARTICLE_CREATE = 'article_create',
-	ARTICLE_EDIT = 'article_edit',
-	NOT_FOUND = 'not_found',
+    MAIN = 'main',
+    ABOUT = 'about',
+    PROFILE = 'profile',
+    ARTICLES = 'articles',
+    ARTICLE_DETAILS = 'article_details',
+    ARTICLE_CREATE = 'article_create',
+    ARTICLE_EDIT = 'article_edit',
+    ADMIN_PANEL = 'admin_panel',
+    FORBIDDEN = 'forbidden',
+    NOT_FOUND = 'not_found',
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
@@ -30,45 +36,57 @@ export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.ARTICLE_DETAILS]: '/articles/', // +id
     [AppRoutes.ARTICLE_CREATE]: '/articles/new',
     [AppRoutes.ARTICLE_EDIT]: '/articles/:id/edit',
-    [AppRoutes.NOT_FOUND]: '*'
-}
+    [AppRoutes.ADMIN_PANEL]: '/admin',
+    [AppRoutes.FORBIDDEN]: '/forbidden',
+    [AppRoutes.NOT_FOUND]: '*',
+};
 
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.MAIN]: {
         path: RoutePath.main,
-        element: <MainPageAsync />
+        element: <MainPage />,
     },
     [AppRoutes.ABOUT]: {
         path: RoutePath.about,
-        element: <AboutPageAsync />
+        element: <AboutPage />,
     },
     [AppRoutes.PROFILE]: {
         path: `${RoutePath.profile}:id`,
-        element: <ProfilePageAsync />,
-        authOnly: true
+        element: <ProfilePage />,
+        authOnly: true,
     },
     [AppRoutes.ARTICLES]: {
         path: RoutePath.articles,
-        element: <ArticlesPageAsync />,
-        authOnly: true
+        element: <ArticlesPage />,
+        authOnly: true,
     },
     [AppRoutes.ARTICLE_DETAILS]: {
         path: `${RoutePath.article_details}:id`,
-        element: <ArticleDetailsPageAsync />,
-        authOnly: true
+        element: <ArticleDetailsPage />,
+        authOnly: true,
     },
     [AppRoutes.ARTICLE_CREATE]: {
         path: `${RoutePath.article_create}`,
-        element: <ArticleEditPageAsync />,
-        authOnly: true
+        element: <ArticleEditPage />,
+        authOnly: true,
     },
     [AppRoutes.ARTICLE_EDIT]: {
         path: `${RoutePath.article_edit}`,
-        element: <ArticleEditPageAsync />,
-        authOnly: true
+        element: <ArticleEditPage />,
+        authOnly: true,
+    },
+    [AppRoutes.ADMIN_PANEL]: {
+        path: `${RoutePath.admin_panel}`,
+        element: <AdminPanelPage />,
+        authOnly: true,
+        roles: [UserRole.ADMIN, UserRole.MODERATOR],
+    },
+    [AppRoutes.FORBIDDEN]: {
+        path: `${RoutePath.forbidden}`,
+        element: <ForbiddenPage />,
     },
     [AppRoutes.NOT_FOUND]: {
         path: RoutePath.not_found,
-        element: <NotFoundPage />
-    }
-}
+        element: <NotFoundPage />,
+    },
+};
