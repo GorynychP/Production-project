@@ -9,6 +9,9 @@ export const fetchProfileData = createAsyncThunk<
     ThankConfig<string>
 >('profile/fetchProfileData', async (profileId, thunkAPI) => {
     try {
+        if (!profileId) {
+            throw new Error('id не найден');
+        }
         const response = await thunkAPI.extra.api.get<Profile>(
             `/profile/${profileId}`,
         );

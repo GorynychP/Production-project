@@ -7,6 +7,18 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDeco
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { ValidateProfileErrors } from 'features/editableProfileCard/model/types/editableProfileCardSchema';
+import { Profile } from 'entities/Profile';
+const profile: Profile = {
+    id: '1',
+    username: 'admin',
+    first: 'Ivan',
+    lastname: 'Burger',
+    age: 20,
+    city: 'Istambul',
+    currency: Currency.EUR,
+    country: Country.Turkey,
+    avatar: 'https://yt3.ggpht.com/ytc/AAUvwngFzM_Rf6MNwOnFcuphoj93k7VFjlIrj-kSMxbh=s900-c-k-c0x00ffffff-no-rj',
+};
 
 const meta: Meta<typeof ProfilePage> = {
     title: 'pages/ProfilePage',
@@ -14,16 +26,8 @@ const meta: Meta<typeof ProfilePage> = {
     decorators: [
         StoreDecorator({
             profile: {
-                form: {
-                    username: 'admin',
-                    first: 'Ivan',
-                    lastname: 'Burger',
-                    age: 20,
-                    city: 'Istambul',
-                    currency: Currency.EUR,
-                    country: Country.Turkey,
-                    avatar: 'https://yt3.ggpht.com/ytc/AAUvwngFzM_Rf6MNwOnFcuphoj93k7VFjlIrj-kSMxbh=s900-c-k-c0x00ffffff-no-rj',
-                },
+                form: profile,
+                data: profile,
             },
         }),
     ],
@@ -37,7 +41,11 @@ export const Normal: Story = {
 };
 export const Readonly: Story = {
     args: {},
-    decorators: [StoreDecorator({ profile: { readonly: true } })],
+    decorators: [
+        StoreDecorator({
+            profile: { readonly: true, form: profile },
+        }),
+    ],
 };
 
 export const Dark: Story = {

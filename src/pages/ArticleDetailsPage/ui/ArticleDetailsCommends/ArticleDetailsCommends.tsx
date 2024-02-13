@@ -15,7 +15,7 @@ import { addCommentForArticle } from '../../model/services/addCommentForArticle/
 
 interface ArticleDetailsCommendsProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 export const ArticleDetailsCommends = ({

@@ -1,6 +1,6 @@
+import React, { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { memo, useCallback } from 'react';
 import {
     DynamicModuleLoader,
     ReducersList,
@@ -27,7 +27,7 @@ import { EditableProfileCardHeader } from '../EditableProfileCardHeader/Editable
 
 interface EditableProfileCardProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 const reducers: ReducersList = { profile: profileReducer };
 
