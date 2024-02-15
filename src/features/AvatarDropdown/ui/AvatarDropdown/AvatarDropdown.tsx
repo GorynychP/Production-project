@@ -1,0 +1,63 @@
+import React, { useCallback } from 'react';
+import { classNames } from 'shared/lib/classNames/classNames';
+import cls from './AvatarDropdown.module.scss';
+import { useTranslation } from 'react-i18next';
+import { Dropdown } from 'shared/ui/Popups';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { useSelector } from 'react-redux';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import {
+    getUserAuthData,
+    isUserAdmin,
+    isUserModerator,
+    userAction,
+} from 'entities/User';
+
+interface AvatarDropdownProps {
+    className?: string;
+}
+
+export const AvatarDropdown = ({ className }: AvatarDropdownProps) => {
+    const { t } = useTranslation();
+    const authData = useSelector(getUserAuthData);
+    const dispatch = useAppDispatch();
+    const isAdmin = useSelector(isUserAdmin);
+    const isModerator = useSelector(isUserModerator);
+    const onLogout = useCallback(() => {
+        dispatch(userAction.logout());
+    }, [dispatch]);
+    const isAdminPanelAvailable = isAdmin || isModerator;
+
+    if (!authData) {
+        return null;
+    }
+    return (
+        <Dropdown
+            className={classNames('', {}, [className])}
+            trigger={
+                <Avatar
+                    className={cls.avatar}
+                    size={35}
+                    src={authData.avatar}
+                />
+            }
+            items={[
+                ...(isAdminPanelAvailable
+                    ? [
+                        {
+                            content: t('Админка'),
+                            href: RoutePath.admin_panel,
+                        },
+                    ]
+                    : []),
+                {
+                    content: t('Профиль'),
+                    href: RoutePath.profile + authData.id,
+                },
+                { content: t('Выйти'), onClick: onLogout },
+            ]}
+            direction="bottom left"
+        />
+    );
+};

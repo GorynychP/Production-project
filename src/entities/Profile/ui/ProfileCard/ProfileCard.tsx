@@ -82,8 +82,8 @@ export const ProfileCard = (props: ProfileCardProps) => {
     };
     return (
         <VStack
-            gap="16"
             max
+            gap="16"
             className={classNames(cls.ProfileCard, mods, [className])}
         >
             {data?.avatar && (

@@ -3,21 +3,15 @@ import { Menu } from '@headlessui/react';
 import cls from './Dropdown.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DropdownDirection } from 'shared/types/ui';
-import { AppLink } from '../AppLink/AppLink';
-
+import { AppLink } from '../../../AppLink/AppLink';
+import { mapDirectionClass } from '../../styles/consts';
+import popupCls from '../../styles/popup.module.scss';
 export interface DropdownItem {
     disabled?: boolean;
     content?: ReactNode;
     onClick?: () => void;
     href?: string;
 }
-const mapDirectionClass: Record<DropdownDirection, string> = {
-    'bottom left': cls.optionsBottomLeft,
-    'bottom right': cls.optionsBottomRight,
-    'top right': cls.optionsTopRight,
-    'top left': cls.optionsTopLeft,
-};
-
 interface DropdownProps {
     className?: string;
     items: DropdownItem[];
@@ -29,8 +23,14 @@ export function Dropdown(props: DropdownProps) {
     const { className, items, trigger, direction = 'bottom right' } = props;
     const menuClasses = [mapDirectionClass[direction]];
     return (
-        <Menu as="div" className={classNames(cls.Dropdown, {}, [className])}>
-            <Menu.Button className={cls.btn}>{trigger}</Menu.Button>
+        <Menu
+            as="div"
+            className={classNames(cls.Dropdown, {}, [
+                className,
+                popupCls.popup,
+            ])}
+        >
+            <Menu.Button className={popupCls.trigger}>{trigger}</Menu.Button>
             <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
                 {items.map((item, index) => {
                     const content = ({ active }: { active: boolean }) => (
@@ -39,7 +39,7 @@ export function Dropdown(props: DropdownProps) {
                             onClick={item.onClick}
                             disabled={item.disabled}
                             className={classNames(cls.item, {
-                                [cls.active]: active,
+                                [popupCls.active]: active,
                             })}
                         >
                             {item.content}
