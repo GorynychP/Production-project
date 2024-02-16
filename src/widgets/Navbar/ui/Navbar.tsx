@@ -6,17 +6,12 @@ import { LangSwitcher } from '../../LangSwitcher/ui/LangSwitcher';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUsername';
 import cls from './Navbar.module.scss';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { getUserAuthData } from 'entities/User/model/selectors/getAuthData/getUserAuthData';
-import { isUserAdmin, isUserModerator, userAction } from 'entities/User';
 import { Text, TextSize, TextTheme } from 'shared/ui/Text/Text';
-import { Dropdown, Popover } from 'shared/ui/Popups';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { HStack } from 'shared/ui/Stack';
 import { NotificationButton } from 'features/NotificationButton';
-import { AvatarDropdown } from 'features/AvatarDropdown/ui/AvatarDropdown/AvatarDropdown';
-
+import { AvatarDropdown } from 'features/AvatarDropdown';
 interface NavbarProps {
     className?: string;
 }

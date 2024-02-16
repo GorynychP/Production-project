@@ -5,23 +5,29 @@
 @import 'themes/newTheme.scss';
 
 body {
-	font: var(--font-m);
-	color: var(--primary-color);
+    font: var(--font-m);
+    color: var(--primary-color);
+}
+.app,
+.app_modal,
+.app_drawer {
+    font: var(--font-m);
+    color: var(--primary-color);
 }
 
 .app {
-	color: var(--primary-color);
-	background: var(--bg-color);
-	min-height: 100vh;
+    color: var(--primary-color);
+    background: var(--bg-color);
+    min-height: 100vh;
 }
 
 .content-page {
-	display: flex;
+    display: flex;
 }
 
 svg *[fill] {
-	fill: currentColor;
+    fill: currentColor;
 }
 svg *[stroke] {
-	stroke: currentColor;
+    stroke: currentColor;
 }
