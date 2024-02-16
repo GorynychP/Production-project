@@ -22,7 +22,6 @@ export const ArticleRecommendationsList = memo(
         if (isLoading || error || !articleRecommendList) {
             return null;
         }
-        console.log('articleRecommendList', articleRecommendList);
         return (
             <VStack gap="8" className={classNames('', {}, [className])}>
                 <Text title={t('Рекомендуем')}></Text>
