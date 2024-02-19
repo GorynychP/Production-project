@@ -1,10 +1,10 @@
 import { useTheme } from './providers/ThemeProvider';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Navbar } from 'widgets/Navbar';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Navbar } from '@/widgets/Navbar';
 import { Suspense, useEffect } from 'react';
-import { Sidebar } from 'widgets/Sidebars';
+import { Sidebar } from '@/widgets/Sidebars';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthInited, userAction } from 'entities/User';
+import { getUserAuthInited, userAction } from '@/entities/User';
 import { AppRouter } from './providers/router';
 
 const App = () => {

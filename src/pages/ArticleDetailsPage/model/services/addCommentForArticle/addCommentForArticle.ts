@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { ThankConfig } from 'app/providers/StoreProvider'
-import { getArticleDetailsData } from 'entities/Article/model/selectors/articleDetails'
-import { Comment } from 'entities/Comment'
-import { getUserAuthData } from 'entities/User/model/selectors/getAuthData/getUserAuthData'
+import { ThankConfig } from '@/app/providers/StoreProvider'
+import { getArticleDetailsData } from '@/entities/Article/model/selectors/articleDetails'
+import { Comment } from '@/entities/Comment'
+import { getUserAuthData } from '@/entities/User/model/selectors/getAuthData/getUserAuthData'
 import { fetchCommentsByArticleId } from '../fetchCommentsByArticleId/fetchCommentsByArticleId'
 // 'https://863e9faeb060e6b2.mokky.dev/auth'
 

@@ -1,13 +1,13 @@
 import React, { memo, useCallback, useEffect } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticleDetails.module.scss';
 import { useTranslation } from 'react-i18next';
 import {
     DynamicModuleLoader,
     ReducersList,
-} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { useSelector } from 'react-redux';
 import {
@@ -15,17 +15,17 @@ import {
     getArticleDetailsError,
     getArticleDetailsLoading,
 } from '../../model/selectors/articleDetails';
-import { Text, TextAlign, TextSize, TextTheme } from 'shared/ui/Text/Text';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { Text, TextAlign, TextSize, TextTheme } from '@/shared/ui/Text/Text';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
 
-import CalendarImage from 'shared/assets/icons/calendar.svg';
-import EyeImage from 'shared/assets/icons/eye.svg';
+import CalendarImage from '@/shared/assets/icons/calendar.svg';
+import EyeImage from '@/shared/assets/icons/eye.svg';
 import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
 import { ArticleBlockCodeComponent } from '../components/ArticleBlockCode/ArticleBlockCode';
 import { ArticleBlockImageComponent } from '../components/ArticleBlockImage/ArticleBlockImage';
 import { ArticleBlockTextComponent } from '../components/ArticleBlockText/ArticleBlockText';
-import { HStack, VStack } from 'shared/ui/Stack';
+import { HStack, VStack } from '@/shared/ui/Stack';
 
 interface ArticleDetailsProps {
     className?: string;

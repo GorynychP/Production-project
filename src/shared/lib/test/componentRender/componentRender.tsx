@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { StateSchema } from 'app/providers/StoreProvider/config/StateSchema';
-import { StoreProvider } from 'app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider/config/StateSchema';
+import { StoreProvider } from '@/app/providers/StoreProvider';
 import { ReducersMapObject } from '@reduxjs/toolkit';
 
 export interface componentRenderOptions {

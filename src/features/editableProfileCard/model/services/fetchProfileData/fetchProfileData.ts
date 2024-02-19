@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThankConfig } from 'app/providers/StoreProvider';
-import { Profile } from 'entities/Profile';
+import { ThankConfig } from '@/app/providers/StoreProvider';
+import { Profile } from '@/entities/Profile';
 // 'https://863e9faeb060e6b2.mokky.dev/auth'
 
 export const fetchProfileData = createAsyncThunk<

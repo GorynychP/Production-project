@@ -1,6 +1,6 @@
 import { articleDataTest } from '../../slice/articleDetailsSlice.test';
 import { fetchArticleById } from './fetchArticleById';
-import { TestAsyncThunk } from 'shared/lib/test/TestAsyncThunk/TestAsyncThunk';
+import { TestAsyncThunk } from '@/shared/lib/test/TestAsyncThunk/TestAsyncThunk';
 
 describe('fetchArticleById.test', () => {
     test('fetch data', async () => {

@@ -6,18 +6,18 @@ import {
     CombinedState,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
-import { ArticleDetailsSchema } from 'entities/Article';
-import { UserSchema } from 'entities/User';
-import { LoginSchema } from 'features/AuthByUsername';
-import { ScrollSaveSchema } from 'features/ScrollSave';
-import { AddCommentFormSchema } from 'features/addCommentForm';
-import { ProfileSchema } from 'features/editableProfileCard';
+import { ArticleDetailsSchema } from '@/entities/Article';
+import { UserSchema } from '@/entities/User';
+import { LoginSchema } from '@/features/AuthByUsername';
+import { ScrollSaveSchema } from '@/features/ScrollSave';
+import { AddCommentFormSchema } from '@/features/addCommentForm';
+import { ProfileSchema } from '@/features/editableProfileCard';
 import {
     ArticleDetailsCommentsSchema,
     ArticleDetailsRecommendSchema,
-} from 'pages/ArticleDetailsPage';
-import { ArticlePageSchema } from 'pages/ArticlesPage';
-import { rtkApi } from 'shared/api/rtkApi';
+} from '@/pages/ArticleDetailsPage';
+import { ArticlePageSchema } from '@/pages/ArticlesPage';
+import { rtkApi } from '@/shared/api/rtkApi';
 export interface StateSchema {
     user: UserSchema;
     scrollSave: ScrollSaveSchema;

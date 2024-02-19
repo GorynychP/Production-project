@@ -3,9 +3,9 @@ import {
     createEntityAdapter,
     createSlice,
 } from '@reduxjs/toolkit';
-import { StateSchema } from 'app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider';
 import { ArticleDetailsRecommendSchema } from '../types/ArticleDetailsRecommendSchema';
-import { Article } from 'entities/Article';
+import { Article } from '@/entities/Article';
 import { fetchRecommendArticles } from '../services/fetchRecommendArticles/fetchRecommendArticles';
 
 const recommendAdapter = createEntityAdapter<Article>({

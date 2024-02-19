@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThankConfig } from 'app/providers/StoreProvider';
+import { ThankConfig } from '@/app/providers/StoreProvider';
 import { getProfileForm } from '../../selectors';
 import { validateProfileData } from '../validateProfileData/validateProfileData';
-import { Profile } from 'entities/Profile';
+import { Profile } from '@/entities/Profile';
 import { ValidateProfileErrors } from '../../types/editableProfileCardSchema';
 // 'https://863e9faeb060e6b2.mokky.dev/auth'
 
