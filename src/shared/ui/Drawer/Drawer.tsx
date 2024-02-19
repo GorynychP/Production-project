@@ -4,7 +4,10 @@ import cls from './Drawer.module.scss';
 import { Portal } from '../Portal/Portal';
 import { useTheme } from '@/app/providers/ThemeProvider';
 import { Overlay } from '../Overlay/Overlay';
-import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
+import {
+    AnimationProvider,
+    useAnimationLibs,
+} from '@/shared/lib/components/AnimationProvider';
 interface DrawerProps {
     className?: string;
     children?: ReactNode;
@@ -97,11 +100,19 @@ export const DrawerContent = memo((props: DrawerProps) => {
         </Portal>
     );
 });
-export const Drawer = memo((props: DrawerProps) => {
+export const DrawerAsync = (props: DrawerProps) => {
     const { isLoaded } = useAnimationLibs();
 
     if (!isLoaded) {
         return null;
     }
     return <DrawerContent {...props} />;
-});
+};
+
+export const Drawer = (props: DrawerProps) => {
+    return (
+        <AnimationProvider>
+            <DrawerAsync {...props} />
+        </AnimationProvider>
+    );
+};
