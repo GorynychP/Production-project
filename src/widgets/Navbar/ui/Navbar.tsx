@@ -35,7 +35,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     theme={TextTheme.INVERTED}
                     title={'KEEK'}
                 />
-
                 <ThemeSwitcher />
                 <LangSwitcher className={cls.lang} />
                 <HStack
