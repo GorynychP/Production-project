@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
 import cls from './MainPage.module.scss';
 import { Dropdown, ListBox } from '@/shared/ui/Popups';
+import { RatingCard } from '@/entities/Rating';
 const MainPage = () => {
     const { t } = useTranslation('main');
     const authData = useSelector(getUserAuthData);
@@ -37,6 +38,11 @@ const MainPage = () => {
                     { content: t('Выйти'), onClick: () => {} },
                 ]}
                 direction="bottom right"
+            />
+            <RatingCard
+                title={'Как вам статья?'}
+                feedbackTitle="Оставьте отзыв о статье"
+                hasFeedback
             />
         </Page>
     );
