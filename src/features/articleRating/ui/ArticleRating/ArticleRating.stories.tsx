@@ -1,16 +1,16 @@
-module.exports = (layer, componentName) => `import React from 'react';
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/app/providers/ThemeProvider';
-import { ${componentName} } from './${componentName}';
+import { ArticleRating } from './ArticleRating';
 
-const meta: Meta<typeof ${componentName}> = {
-	title: '${layer}/${componentName}',
-	component: ${componentName},
+const meta: Meta<typeof ArticleRating> = {
+	title: 'features/ArticleRating',
+	component: ArticleRating,
 };
 
 export default meta;
-type Story = StoryObj<typeof ${componentName}>;
+type Story = StoryObj<typeof ArticleRating>;
 
 export const Normal: Story = {
 	args: {},
@@ -19,4 +19,4 @@ export const Normal: Story = {
 export const Dark: Story = {
 	args: {},
 	decorators: [ThemeDecorator(Theme.DARK)],
-};`;
+};
