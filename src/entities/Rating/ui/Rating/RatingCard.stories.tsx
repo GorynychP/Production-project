@@ -7,6 +7,7 @@ import { RatingCard } from './RatingCard';
 const meta: Meta<typeof RatingCard> = {
     title: 'entities/RatingCard',
     component: RatingCard,
+    args: { title: 'Ваша оценка' },
 };
 
 export default meta;

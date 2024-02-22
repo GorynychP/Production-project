@@ -4,7 +4,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Theme } from '@/app/providers/ThemeProvider';
 import { NotificationButton } from './NotificationButton';
 const meta: Meta<typeof NotificationButton> = {
-    title: 'feature/NotificationButton',
+    title: 'features/NotificationButton',
     component: NotificationButton,
 };
 

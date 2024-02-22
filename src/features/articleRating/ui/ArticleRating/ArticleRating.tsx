@@ -1,5 +1,5 @@
+import React, { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { memo, useCallback } from 'react';
 import { RatingCard } from '@/entities/Rating';
 import {
     useGetArticleRating,

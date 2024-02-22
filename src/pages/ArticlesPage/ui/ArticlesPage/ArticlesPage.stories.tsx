@@ -40,6 +40,23 @@ const meta: Meta<typeof ArticlesPage> = {
     title: 'pages/Article/ArticlesPage',
     component: ArticlesPage,
     decorators: [StoreDecorator()],
+    parameters: {
+        mockData: [
+            {
+                url:
+                    __API__ +
+                    '/articles?expand=user&limit=3&page=1&order=desc&sort=views&type=ALL&search=',
+                method: 'GET',
+                status: 200,
+                delay: 1000,
+                response: [
+                    { ...article, id: '1' },
+                    { ...article, id: '2' },
+                    { ...article, id: '3' },
+                ],
+            },
+        ],
+    },
 };
 
 export default meta;
