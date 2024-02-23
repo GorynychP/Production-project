@@ -2,7 +2,7 @@ import React from 'react';
 import { BugButton } from '@/app/providers/ErrorBoundary';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/shared/ui/Button/Button';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/const/router';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
 import cls from './MainPage.module.scss';

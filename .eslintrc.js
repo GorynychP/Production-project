@@ -67,7 +67,17 @@ module.exports = {
         'arrow-body-style': 'off',
         'react/display-name': 'off',
         'path-ch-plg/path-checker': ['error', { alias: '@' }],
-        'path-ch-plg/public-api-imports': ['error', { alias: '@' }],
+        'path-ch-plg/public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                testFilesPatterns: [
+                    '**/*.test.ts',
+                    '**/*.stories.*',
+                    '**/StoreDecorator.tsx',
+                ],
+            },
+        ],
     },
     globals: {
         __IS_DEV__: true,
