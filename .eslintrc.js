@@ -66,7 +66,8 @@ module.exports = {
         'react/no-array-index-key': 'off',
         'arrow-body-style': 'off',
         'react/display-name': 'off',
-        'path-ch-plg/path-checker': 'error',
+        'path-ch-plg/path-checker': ['error', { alias: '@' }],
+        'path-ch-plg/public-api-imports': ['error', { alias: '@' }],
     },
     globals: {
         __IS_DEV__: true,

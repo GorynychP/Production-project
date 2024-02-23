@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
     ArticleSortField,
     ArticleSortSelector,
+    ArticleType,
     ArticleTypeTabs,
     ArticleView,
     ArticleViewSelector,
@@ -23,7 +24,6 @@ import { Card } from '@/shared/ui/Card/Card';
 import { Input } from '@/shared/ui/Input/Input';
 import { SortOrder } from '@/shared/types';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
-import { ArticleType } from '@/entities/Article/model/types/article';
 interface ArticlesPageFilterProps {
     className?: string;
 }

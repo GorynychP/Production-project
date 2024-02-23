@@ -2,9 +2,9 @@ import React from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 // import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
-import { Page } from '@/widgets/Page/Page';
 import { VStack } from '@/shared/ui/Stack';
 import { EditableProfileCard } from '@/features/editableProfileCard';
+import { Page } from '@/widgets/Page';
 // import { Text } from 'shared/ui/Text/Text';
 
 interface ProfilePageProps {

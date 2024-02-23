@@ -9,13 +9,12 @@ import {
     ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { articlePageReducer } from '../../model/slices/articlePageSlice';
-
-import { Page } from '@/widgets/Page/Page';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initedArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { ArticlesPageFilter } from '../components/ArticlesPageFilter/ArticlesPageFilter';
 import { useSearchParams } from 'react-router-dom';
 import { ArticleInfiniteList } from '../components/ArticleInfiniteList/ArticleInfiniteList';
+import { Page } from '@/widgets/Page';
 
 interface ArticlesPageProps {
     className?: string;

@@ -1,27 +1,32 @@
-import { createSelector } from '@reduxjs/toolkit'
-import { getUserAuthData } from '@/entities/User/model/selectors/getAuthData/getUserAuthData'
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
-import MainIcon from '@/shared/assets/icons/main.svg'
-import AboutIcon from '@/shared/assets/icons/about.svg'
-import ProfileIcon from '@/shared/assets/icons/profile.svg'
-import ArticleIcon from '@/shared/assets/icons/article.svg'
-import { SidebarItemType } from '../types/sidebar'
+import { createSelector } from '@reduxjs/toolkit';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import MainIcon from '@/shared/assets/icons/main.svg';
+import AboutIcon from '@/shared/assets/icons/about.svg';
+import ProfileIcon from '@/shared/assets/icons/profile.svg';
+import ArticleIcon from '@/shared/assets/icons/article.svg';
+import { SidebarItemType } from '../types/sidebar';
+import { getUserAuthData } from '@/entities/User';
 
-export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
+export const getSidebarItems = createSelector(getUserAuthData, userData => {
     const sidebarItemsList: SidebarItemType[] = [
         { path: RoutePath.main, Icon: MainIcon, text: 'Главная' },
-        { path: RoutePath.about, Icon: AboutIcon, text: 'О сайте' }
-    ]
+        { path: RoutePath.about, Icon: AboutIcon, text: 'О сайте' },
+    ];
     if (userData) {
         sidebarItemsList.push(
             {
                 path: `${RoutePath.profile}${userData?.id}`,
                 Icon: ProfileIcon,
                 text: 'Профиль',
-                authOnly: true
+                authOnly: true,
             },
-            { path: RoutePath.articles, Icon: ArticleIcon, text: 'Статьи', authOnly: true }
-        )
+            {
+                path: RoutePath.articles,
+                Icon: ArticleIcon,
+                text: 'Статьи',
+                authOnly: true,
+            },
+        );
     }
-    return sidebarItemsList
-})
+    return sidebarItemsList;
+});

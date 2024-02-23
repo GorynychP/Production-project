@@ -9,7 +9,6 @@ import {
     ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { ArticleDetails } from '@/entities/Article';
-import { Page } from '@/widgets/Page/Page';
 
 import { articleDetailsCommentsReducer } from '../../model/slice/articleDetailsCommentsSlice';
 
@@ -19,6 +18,7 @@ import { VStack } from '@/shared/ui/Stack';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { ArticleDetailsCommends } from '../ArticleDetailsCommends/ArticleDetailsCommends';
 import { ArticleRating } from '@/features/articleRating';
+import { Page } from '@/widgets/Page';
 
 interface ArticleDetailsPageProps {
     className?: string;
