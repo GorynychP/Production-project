@@ -1,8 +1,6 @@
 import React, { memo, useCallback, useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
 import { useTranslation } from 'react-i18next';
-import { LangSwitcher } from '../../LangSwitcher/ui/LangSwitcher';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
 import { LoginModal } from '@/features/AuthByUsername';
 import cls from './Navbar.module.scss';
@@ -12,6 +10,8 @@ import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/NotificationButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { getUserAuthData } from '@/entities/User';
+import { ThemeSwitcher } from '@/features/ThemeSwitcher';
+import { LangSwitcher } from '@/features/LangSwitcher';
 interface NavbarProps {
     className?: string;
 }

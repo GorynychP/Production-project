@@ -1,4 +1,5 @@
 import React from 'react';
+// eslint-disable-next-line path-ch-plg/layer-imports
 import { BugButton } from '@/app/providers/ErrorBoundary';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/shared/ui/Button/Button';
@@ -9,6 +10,7 @@ import cls from './MainPage.module.scss';
 import { Dropdown, ListBox } from '@/shared/ui/Popups';
 import { RatingCard } from '@/entities/Rating';
 import { Page } from '@/widgets/Page';
+
 const MainPage = () => {
     const { t } = useTranslation('main');
     const authData = useSelector(getUserAuthData);

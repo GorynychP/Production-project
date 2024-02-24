@@ -20,10 +20,17 @@ module.exports = {
         // project: './tsconfig.json',
         sourceType: 'module',
     },
-    plugins: ['react', '@typescript-eslint', 'react-hooks', 'path-ch-plg'],
+    plugins: [
+        'react',
+        '@typescript-eslint',
+        'react-hooks',
+        'path-ch-plg',
+        'unused-imports',
+    ],
     rules: {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
+        'unused-imports/no-unused-imports': 'error',
         indent: [
             'error',
             4,
@@ -49,13 +56,6 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
-        // 'i18next/no-literal-string': [
-        //     'error',
-        //     {
-        //         markupOnly: true,
-        //         ignoreAttribute: ['data-testid', 'to', 'target']
-        //     }
-        // ],
         'max-len': ['error', { ignoreComments: true, code: 125 }],
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
@@ -67,6 +67,13 @@ module.exports = {
         'arrow-body-style': 'off',
         'react/display-name': 'off',
         'path-ch-plg/path-checker': ['error', { alias: '@' }],
+        'path-ch-plg/layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+            },
+        ],
         'path-ch-plg/public-api-imports': [
             'error',
             {
