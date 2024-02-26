@@ -1,15 +1,15 @@
-import React from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { Theme } from '@/app/providers/ThemeProvider'
-import { CommentCard } from './CommentCard'
+import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
+import { CommentCard } from './CommentCard';
 
 const meta: Meta<typeof CommentCard> = {
     title: 'entities/Comment/CommentCard',
-    component: CommentCard
-}
+    component: CommentCard,
+};
 
-export default meta
+export default meta;
 type Story = StoryObj<typeof CommentCard>;
 
 export const Normal: Story = {
@@ -20,11 +20,11 @@ export const Normal: Story = {
             user: {
                 username: 'user',
                 id: '1',
-                avatar: 'https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg'
-            }
-        }
-    }
-}
+                avatar: 'https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg',
+            },
+        },
+    },
+};
 
 export const Dark: Story = {
     args: {
@@ -34,14 +34,14 @@ export const Dark: Story = {
             user: {
                 username: 'user',
                 id: '1',
-                avatar: 'https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg'
-            }
-        }
+                avatar: 'https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg',
+            },
+        },
     },
-    decorators: [ThemeDecorator(Theme.DARK)]
-}
+    decorators: [ThemeDecorator(Theme.DARK)],
+};
 export const Loading: Story = {
     args: {
-        isLoading: true
-    }
-}
+        isLoading: true,
+    },
+};
