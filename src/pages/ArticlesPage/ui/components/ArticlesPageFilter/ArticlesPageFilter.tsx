@@ -20,8 +20,8 @@ import {
     getArticlePageView,
 } from '../../../model/selectors/articlesPageSelector';
 import { fetchArticlesList } from '../../../model/services/fetchArticlesList/fetchArticlesList';
-import { Card } from '@/shared/ui/Card/Card';
-import { Input } from '@/shared/ui/Input/Input';
+import { Card } from '@/shared/ui/Card';
+import { Input } from '@/shared/ui/Input';
 import { SortOrder } from '@/shared/types';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 interface ArticlesPageFilterProps {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button'
+import { Button, ButtonTheme } from '@/shared/ui/Button'
 import { useTranslation } from 'react-i18next'
 
 export const BugButton = () => {

@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Article, ArticleView } from '../../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
-import { Text, TextAlign, TextSize } from '@/shared/ui/Text/Text';
+import { Text, TextAlign, TextSize } from '@/shared/ui/Text';
 
 interface ArticleListProps {
     className?: string;

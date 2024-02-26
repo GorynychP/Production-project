@@ -4,7 +4,7 @@ import cls from './ArticleViewSelector.module.scss';
 import { ArticleView } from '../../../model/types/article';
 import ListImg from '@/shared/assets/icons/bi_list.svg';
 import TiledImg from '@/shared/assets/icons/fe_tiled.svg';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
 interface ArticleViewSelectorProps {
     className?: string;
     view: ArticleView;
