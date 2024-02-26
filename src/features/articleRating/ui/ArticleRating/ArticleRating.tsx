@@ -11,11 +11,11 @@ import { Skeleton } from '@/shared/ui/Skeleton';
 
 export interface ArticleRatingProps {
     className?: string;
-    articleId: string;
+    articleId?: string;
 }
 
 const ArticleRating = memo((props: ArticleRatingProps) => {
-    const { className, articleId } = props;
+    const { className, articleId = '' } = props;
     const { t } = useTranslation();
     const userData = useSelector(getUserAuthData);
 

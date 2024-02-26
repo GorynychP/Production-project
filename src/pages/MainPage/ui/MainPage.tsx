@@ -3,7 +3,7 @@ import React from 'react';
 import { BugButton } from '@/app/providers/ErrorBoundary';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/shared/ui/Button';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteProfile } from '@/shared/const/router';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
 import cls from './MainPage.module.scss';
@@ -35,7 +35,7 @@ const MainPage = () => {
                 items={[
                     {
                         content: t('Профиль'),
-                        href: RoutePath.profile + authData?.id,
+                        href: authData ? getRouteProfile(authData?.id) : '',
                     },
                     { content: t('Выйти'), onClick: () => {} },
                 ]}

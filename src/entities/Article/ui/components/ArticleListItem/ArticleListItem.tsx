@@ -14,12 +14,12 @@ import { Card } from '@/shared/ui/Card';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Button } from '@/shared/ui/Button';
 import { ArticleBlockTextComponent } from '../ArticleBlockText/ArticleBlockText';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleDetails } from '@/shared/const/router';
 import { AppLink } from '@/shared/ui/AppLink';
 
 interface ArticleListItemProps {
     className?: string;
-    article?: Article;
+    article: Article;
     view: ArticleView;
     target?: HTMLAttributeAnchorTarget;
 }
@@ -73,7 +73,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     <div className={cls.footer}>
                         <AppLink
                             target={target}
-                            to={RoutePath.article_details + article?.id}
+                            to={getRouteArticleDetails(article.id)}
                         >
                             <Button>{t('Читать далее ...')}</Button>
                         </AppLink>
@@ -90,10 +90,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                 cls[view],
             ])}
         >
-            <AppLink
-                target={target}
-                to={RoutePath.article_details + article?.id}
-            >
+            <AppLink target={target} to={getRouteArticleDetails(article.id)}>
                 <Card>
                     <div className={cls.imageWrapper}>
                         <img

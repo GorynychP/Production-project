@@ -4,7 +4,7 @@ import cls from './AvatarDropdown.module.scss';
 import { useTranslation } from 'react-i18next';
 import { Dropdown } from '@/shared/ui/Popups';
 import { Avatar } from '@/shared/ui/Avatar';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
@@ -47,13 +47,13 @@ export const AvatarDropdown = ({ className }: AvatarDropdownProps) => {
                     ? [
                         {
                             content: t('Админка'),
-                            href: RoutePath.admin_panel,
+                            href: getRouteAdmin(),
                         },
                     ]
                     : []),
                 {
                     content: t('Профиль'),
-                    href: RoutePath.profile + authData.id,
+                    href: getRouteProfile(authData.id),
                 },
                 { content: t('Выйти'), onClick: onLogout },
             ]}

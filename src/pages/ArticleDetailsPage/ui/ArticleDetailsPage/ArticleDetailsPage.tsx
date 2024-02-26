@@ -22,22 +22,15 @@ import { Page } from '@/widgets/Page';
 interface ArticleDetailsPageProps {
     className?: string;
 }
-const articleCommentsReducer: ReducersList = {
+const reducers: ReducersList = {
     articleDetailsComments: articleDetailsCommentsReducer,
     articleDetailsRecommendation: articleDetailsRecommendReducer,
 };
 
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
-    // const { t } = useTranslation('article-details');
     const { id } = useParams<{ id: string }>();
-    if (!id) {
-        return null;
-    }
     return (
-        <DynamicModuleLoader
-            reducers={articleCommentsReducer}
-            removeAfterUnmount
-        >
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page
                 className={classNames(cls.ArticleDetailsPage, {}, [className])}
             >
