@@ -1,10 +1,11 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { ArticleTypeTabs } from './ArticleTypeTabs';
 import { Theme } from '@/shared/const/theme';
+import { ArticleTypeTabs } from './ArticleTypeTabs';
+
 const meta: Meta<typeof ArticleTypeTabs> = {
-    title: 'entities/Article/ArticleTypeTabs',
+    title: 'features/Article/ArticleTypeTabs',
     component: ArticleTypeTabs,
 };
 
