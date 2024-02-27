@@ -31,6 +31,7 @@ module.exports = {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         'unused-imports/no-unused-imports': 'error',
+        '@typescript-eslint/no-namespace': 'off',
         indent: [
             'error',
             4,

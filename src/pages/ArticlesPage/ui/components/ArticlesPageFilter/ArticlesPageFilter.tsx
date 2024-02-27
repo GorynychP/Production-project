@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticlesPageFilter.module.scss';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article';
 import { articlesPageAction } from '../../../model/slices/articlesPageSlice';
 import {
@@ -20,13 +20,14 @@ import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { ArticleViewSelector } from '@/features/ArticleViewSelector';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 interface ArticlesPageFilterProps {
     className?: string;
 }
 
 export const ArticlesPageFilter = ({ className }: ArticlesPageFilterProps) => {
     const { t } = useTranslation();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const view = useSelector(getArticlePageView);
     const order = useSelector(getArticlePageOrder);
     const sort = useSelector(getArticlePageSort);
