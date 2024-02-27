@@ -37,6 +37,7 @@ export const AvatarDropdown = ({ className }: AvatarDropdownProps) => {
             className={classNames('', {}, [className])}
             trigger={
                 <Avatar
+                    fallbackInverted
                     className={cls.avatar}
                     size={35}
                     src={authData.avatar}
@@ -45,11 +46,11 @@ export const AvatarDropdown = ({ className }: AvatarDropdownProps) => {
             items={[
                 ...(isAdminPanelAvailable
                     ? [
-                        {
-                            content: t('Админка'),
-                            href: getRouteAdmin(),
-                        },
-                    ]
+                          {
+                              content: t('Админка'),
+                              href: getRouteAdmin(),
+                          },
+                      ]
                     : []),
                 {
                     content: t('Профиль'),
