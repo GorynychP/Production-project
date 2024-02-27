@@ -13,7 +13,10 @@ export const ForbiddenPage = ({ className }: ForbiddenPageProps) => {
     const { t } = useTranslation();
 
     return (
-        <Page className={classNames(cls.ForbiddenPage, {}, [className])}>
+        <Page
+            data-testid={'ForbiddenPage'}
+            className={classNames(cls.ForbiddenPage, {}, [className])}
+        >
             <Text
                 theme={TextTheme.ERROR}
                 align={TextAlign.CENTER}

@@ -15,7 +15,7 @@ const MainPage = () => {
     const { t } = useTranslation('main');
     const authData = useSelector(getUserAuthData);
     return (
-        <Page>
+        <Page data-testid={'MainPage'}>
             <div>{t('Главная страница')}</div>
             <BugButton />
             <ListBox

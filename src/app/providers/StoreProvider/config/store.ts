@@ -1,9 +1,5 @@
-import {
-    CombinedState,
-    Reducer,
-    ReducersMapObject,
-    configureStore,
-} from '@reduxjs/toolkit';
+import { CombinedState, Reducer } from 'redux';
+import { ReducersMapObject, configureStore } from '@reduxjs/toolkit';
 import { StateSchema } from './StateSchema';
 import { userReducer } from '@/entities/User';
 import { createReducerManager } from './reducerManager';

@@ -7,7 +7,7 @@ import {
     DynamicModuleLoader,
     ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { articlePageReducer } from '../../model/slices/articlePageSlice';
+import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initedArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { ArticlesPageFilter } from '../components/ArticlesPageFilter/ArticlesPageFilter';
@@ -18,7 +18,7 @@ import { Page } from '@/widgets/Page';
 interface ArticlesPageProps {
     className?: string;
 }
-const reducers: ReducersList = { articlesPage: articlePageReducer };
+const reducers: ReducersList = { articlesPage: articlesPageReducer };
 
 const ArticlesPage = ({ className }: ArticlesPageProps) => {
     // const { t } = useTranslation('article');

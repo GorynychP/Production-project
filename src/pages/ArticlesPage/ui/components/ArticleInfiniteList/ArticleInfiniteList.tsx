@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { ArticleList } from '@/entities/Article';
 import { useSelector } from 'react-redux';
-import { getArticle } from '../../../model/slices/articlePageSlice';
+import { getArticle } from '../../../model/slices/articlesPageSlice';
 import {
     getArticlePageError,
     getArticlePageIsLoading,
