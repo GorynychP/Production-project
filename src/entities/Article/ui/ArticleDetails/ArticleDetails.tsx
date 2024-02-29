@@ -122,19 +122,21 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
                         size={200}
                     />
                 </HStack>
-                <Text
-                    size={TextSize.L}
-                    title={article?.title}
-                    text={article?.subtitle}
-                />
-                <HStack align="center" gap="8">
-                    <EyeImage className={cls.icon} />
-                    <Text text={String(article?.views)} />
-                </HStack>
-                <HStack align="center" gap="8">
-                    <CalendarImage className={cls.icon} />
-                    <Text text={article?.createdAt} />
-                </HStack>
+                <VStack gap="4" max data-testid="ArticleDetails.Info">
+                    <Text
+                        size={TextSize.L}
+                        title={article?.title}
+                        text={article?.subtitle}
+                    />
+                    <HStack align="center" gap="8">
+                        <EyeImage className={cls.icon} />
+                        <Text text={String(article?.views)} />
+                    </HStack>
+                    <HStack align="center" gap="8">
+                        <CalendarImage className={cls.icon} />
+                        <Text text={article?.createdAt} />
+                    </HStack>
+                </VStack>
                 {article?.blocks.map(renderBlock)}
             </>
         );
