@@ -18,7 +18,8 @@ import { ArticleRecommendationsList } from '@/features/articleRecommendationsLis
 import { ArticleDetailsCommends } from '../ArticleDetailsCommends/ArticleDetailsCommends';
 import { ArticleRating } from '@/features/articleRating';
 import { Page } from '@/widgets/Page';
-import { getFeatureFlag, toggleFeatures } from '@/shared/lib/features';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Text } from '@/shared/ui/Text';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -30,13 +31,6 @@ const reducers: ReducersList = {
 
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const { id } = useParams<{ id: string }>();
-    const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
-
-    // const counter = toggleFeatures({
-    //     name: 'isArticleRatingEnabled',
-    //     on: () => <ArticleRating />,
-    //     off: () => <ArticleRecommendationsList />,
-    // });
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page
@@ -45,7 +39,11 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                 <VStack gap="20" max>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
-                    {isArticleRatingEnabled && <ArticleRating articleId={id} />}
+                    <ToggleFeatures
+                        feature="isArticleRatingEnabled"
+                        on={<ArticleRating articleId={id} />}
+                        off={<Text title="Новая контент скоро появиться " />}
+                    />
                     <ArticleRecommendationsList />
                     <ArticleDetailsCommends id={id} />
                 </VStack>
