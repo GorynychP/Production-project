@@ -1,12 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThankConfig } from '@/app/providers/StoreProvider';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { Article } from '../../types/article';
 // 'https://863e9faeb060e6b2.mokky.dev/auth'
 
 export const fetchArticleById = createAsyncThunk<
     Article,
     string | undefined,
-    ThankConfig<string>
+    ThunkConfig<string>
 >('article/fetchArticleById', async (articleId, thunkAPI) => {
     try {
         if (!articleId) {

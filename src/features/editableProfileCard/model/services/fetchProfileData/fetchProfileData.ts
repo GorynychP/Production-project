@@ -1,12 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThankConfig } from '@/app/providers/StoreProvider';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { Profile } from '@/entities/Profile';
 // 'https://863e9faeb060e6b2.mokky.dev/auth'
 
 export const fetchProfileData = createAsyncThunk<
     Profile,
     string,
-    ThankConfig<string>
+    ThunkConfig<string>
 >('profile/fetchProfileData', async (profileId, thunkAPI) => {
     try {
         if (!profileId) {

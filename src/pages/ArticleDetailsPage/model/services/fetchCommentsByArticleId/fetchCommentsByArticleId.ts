@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThankConfig } from '@/app/providers/StoreProvider';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { Comment } from '@/entities/Comment';
 
 // 'https://863e9faeb060e6b2.mokky.dev/auth'
@@ -7,7 +7,7 @@ import { Comment } from '@/entities/Comment';
 export const fetchCommentsByArticleId = createAsyncThunk<
     Comment[],
     string | undefined,
-    ThankConfig<string>
+    ThunkConfig<string>
 >('articleDetails/fetchCommentsByArticleId', async (articleId, thunkAPI) => {
     try {
         if (!articleId) {

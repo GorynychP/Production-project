@@ -12,6 +12,8 @@ import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { getUserAuthData } from '@/entities/User';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { LangSwitcher } from '@/features/LangSwitcher';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { NavbarRedesigned } from '../NavbarRedesigned/NavbarRedesigned';
 interface NavbarProps {
     className?: string;
 }
@@ -28,25 +30,31 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
     if (authData) {
         return (
-            <div className={classNames(cls.Navbar, {}, [className])}>
-                <Text
-                    className={cls.appName}
-                    size={TextSize.L}
-                    theme={TextTheme.INVERTED}
-                    title={'KEEK'}
-                />
-                <ThemeSwitcher />
-                <LangSwitcher className={cls.lang} />
-                <HStack
-                    gap="16"
-                    max={false}
-                    align="center"
-                    className={cls.actions}
-                >
-                    <NotificationButton />
-                    <AvatarDropdown />
-                </HStack>
-            </div>
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                off={
+                    <div className={classNames(cls.Navbar, {}, [className])}>
+                        <Text
+                            className={cls.appName}
+                            size={TextSize.L}
+                            theme={TextTheme.INVERTED}
+                            title={'KEEK'}
+                        />
+                        <ThemeSwitcher />
+                        <LangSwitcher className={cls.lang} />
+                        <HStack
+                            gap="16"
+                            max={false}
+                            align="center"
+                            className={cls.actions}
+                        >
+                            <NotificationButton />
+                            <AvatarDropdown />
+                        </HStack>
+                    </div>
+                }
+                on={<NavbarRedesigned />}
+            />
         );
     }
 

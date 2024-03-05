@@ -2,28 +2,52 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Navbar } from '@/widgets/Navbar';
 import { Suspense, useEffect } from 'react';
 import { Sidebar } from '@/widgets/Sidebars';
-import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthInited, userAction } from '@/entities/User';
+import { useSelector } from 'react-redux';
+import { getUserAuthInited, initAuthData } from '@/entities/User';
 import { AppRouter } from './providers/router';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { PageLoader } from '@/widgets/PageLoader';
+import { MainLayout } from '@/shared/layouts/MainLayout';
 
 const App = () => {
     const { theme } = useTheme();
     const inited = useSelector(getUserAuthInited);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     useEffect(() => {
-        dispatch(userAction.initAuthData());
+        dispatch(initAuthData());
     }, [dispatch]);
+    if (!inited) {
+        return <PageLoader />;
+    }
     return (
-        <div className={classNames('app', {}, [theme])}>
-            <Suspense fallback="">
-                <Navbar />
-                <div className="content-page">
-                    <Sidebar />
-                    {inited && <AppRouter />}
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            off={
+                <div className={classNames('app', {}, [theme])}>
+                    <Suspense fallback="">
+                        <Navbar />
+                        <div className="content-page">
+                            <Sidebar />
+                            {inited && <AppRouter />}
+                        </div>
+                    </Suspense>
                 </div>
-            </Suspense>
-        </div>
+            }
+            on={
+                <div className={classNames('app_redesigned', {}, [theme])}>
+                    <Suspense fallback="">
+                        <MainLayout
+                            header={<Navbar />}
+                            sidebar={<Sidebar />}
+                            content={<AppRouter />}
+                            toolbar={<div>Toolbar</div>}
+                        />
+                    </Suspense>
+                </div>
+            }
+        />
     );
 };
 

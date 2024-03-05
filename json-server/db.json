@@ -6,7 +6,8 @@
             "password": "123",
             "roles": ["ADMIN"],
             "features": {
-                "isArticleRatingEnabled": true
+                "isArticleRatingEnabled": true,
+                "isAppRedesigned": true
             },
             "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
         },

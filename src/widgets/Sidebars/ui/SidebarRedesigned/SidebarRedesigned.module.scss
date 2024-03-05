@@ -1,0 +1,24 @@
+.SidebarRedesigned {
+    // height: calc(100vh - var(--navbar-height));
+    height: 100%;
+    width: 200px;
+    background: var(--light-bg-redesigned);
+    border-radius: 32px;
+    position: relative;
+    transition: width 0.3s;
+}
+
+.collapsedBtn {
+    position: absolute;
+    right: -15px;
+    top: 45%;
+}
+
+.items {
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.collapsed {
+    width: var(--sidebar-width-collapsed);
+}
