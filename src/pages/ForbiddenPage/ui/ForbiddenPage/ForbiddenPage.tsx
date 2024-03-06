@@ -2,7 +2,7 @@ import React from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ForbiddenPage.module.scss';
 import { useTranslation } from 'react-i18next';
-import { Text, TextAlign, TextTheme } from '@/shared/ui/Text';
+import { Text, TextAlign, TextTheme } from '@/shared/ui/deprecated/Text';
 import { Page } from '@/widgets/Page';
 
 interface ForbiddenPageProps {

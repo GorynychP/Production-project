@@ -1,11 +1,12 @@
 import React, { useMemo, useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './SidebarRedesigned.module.scss';
-import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
+import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { useSelector } from 'react-redux';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
-import { VStack } from '@/shared/ui/Stack';
+import { VStack } from '@/shared/ui/deprecated/Stack';
+import { AppLogo } from '@/shared/ui/deprecated/AppLogo';
 interface SidebarRedesignedProps {
     className?: string;
 }
@@ -39,6 +40,7 @@ export const SidebarRedesigned = ({ className }: SidebarRedesignedProps) => {
                 [className],
             )}
         >
+            <AppLogo className={cls.appLogo} />
             <Button
                 data-testid="sidebar-toggle"
                 className={cls.collapsedBtn}

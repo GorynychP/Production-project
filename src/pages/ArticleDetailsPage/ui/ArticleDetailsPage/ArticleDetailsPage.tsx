@@ -13,13 +13,13 @@ import { articleDetailsCommentsReducer } from '../../model/slice/articleDetailsC
 
 import { articleDetailsRecommendReducer } from '../../model/slice/articleDetailsRecommendationSlice';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
-import { VStack } from '@/shared/ui/Stack';
+import { VStack } from '@/shared/ui/deprecated/Stack';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { ArticleDetailsCommends } from '../ArticleDetailsCommends/ArticleDetailsCommends';
 import { ArticleRating } from '@/features/articleRating';
 import { Page } from '@/widgets/Page';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { Text } from '@/shared/ui/Text';
+import { Text } from '@/shared/ui/deprecated/Text';
 
 interface ArticleDetailsPageProps {
     className?: string;

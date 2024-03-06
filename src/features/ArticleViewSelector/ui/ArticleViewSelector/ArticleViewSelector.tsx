@@ -3,7 +3,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticleViewSelector.module.scss';
 import ListImg from '@/shared/assets/icons/bi_list.svg';
 import TiledImg from '@/shared/assets/icons/fe_tiled.svg';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { ArticleView } from '@/entities/Article';
 interface ArticleViewSelectorProps {
     className?: string;

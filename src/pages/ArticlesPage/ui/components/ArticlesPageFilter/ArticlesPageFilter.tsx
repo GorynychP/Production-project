@@ -13,8 +13,8 @@ import {
     getArticlePageView,
 } from '../../../model/selectors/articlesPageSelector';
 import { fetchArticlesList } from '../../../model/services/fetchArticlesList/fetchArticlesList';
-import { Card } from '@/shared/ui/Card';
-import { Input } from '@/shared/ui/Input';
+import { Card } from '@/shared/ui/deprecated/Card';
+import { Input } from '@/shared/ui/deprecated/Input';
 import { SortOrder } from '@/shared/types/sort';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';

@@ -8,7 +8,7 @@ import {
     getArticlePageIsLoading,
     getArticlePageView,
 } from '../../../model/selectors/articlesPageSelector';
-import { Text, TextTheme } from '@/shared/ui/Text';
+import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
 
 interface ArticleInfiniteListProps {
     className?: string;

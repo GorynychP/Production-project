@@ -2,8 +2,7 @@ import React, { useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './AvatarDropdown.module.scss';
 import { useTranslation } from 'react-i18next';
-import { Dropdown } from '@/shared/ui/Popups';
-import { Avatar } from '@/shared/ui/Avatar';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -13,6 +12,7 @@ import {
     isUserModerator,
     userAction,
 } from '@/entities/User';
+import { Dropdown } from '@/shared/ui/deprecated/Popups';
 
 interface AvatarDropdownProps {
     className?: string;
@@ -46,11 +46,11 @@ export const AvatarDropdown = ({ className }: AvatarDropdownProps) => {
             items={[
                 ...(isAdminPanelAvailable
                     ? [
-                        {
-                            content: t('Админка'),
-                            href: getRouteAdmin(),
-                        },
-                    ]
+                          {
+                              content: t('Админка'),
+                              href: getRouteAdmin(),
+                          },
+                      ]
                     : []),
                 {
                     content: t('Профиль'),

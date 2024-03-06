@@ -2,12 +2,12 @@ import React from 'react';
 // eslint-disable-next-line path-ch-plg/layer-imports
 import { BugButton } from '@/app/providers/ErrorBoundary';
 import { useTranslation } from 'react-i18next';
-import { Button } from '@/shared/ui/Button';
+import { Button } from '@/shared/ui/deprecated/Button';
 import { getRouteProfile } from '@/shared/const/router';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
 import cls from './MainPage.module.scss';
-import { Dropdown, ListBox } from '@/shared/ui/Popups';
+import { Dropdown, ListBox } from '@/shared/ui/deprecated/Popups';
 import { RatingCard } from '@/entities/Rating';
 import { Page } from '@/widgets/Page';
 

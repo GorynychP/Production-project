@@ -15,9 +15,14 @@ import {
     getArticleDetailsError,
     getArticleDetailsLoading,
 } from '../../model/selectors/articleDetails';
-import { Text, TextAlign, TextSize, TextTheme } from '@/shared/ui/Text';
-import { Skeleton } from '@/shared/ui/Skeleton';
-import { Avatar } from '@/shared/ui/Avatar';
+import {
+    Text,
+    TextAlign,
+    TextSize,
+    TextTheme,
+} from '@/shared/ui/deprecated/Text';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
 
 import CalendarImage from '@/shared/assets/icons/calendar.svg';
 import EyeImage from '@/shared/assets/icons/eye.svg';
@@ -25,7 +30,7 @@ import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
 import { ArticleBlockCodeComponent } from '../components/ArticleBlockCode/ArticleBlockCode';
 import { ArticleBlockImageComponent } from '../components/ArticleBlockImage/ArticleBlockImage';
 import { ArticleBlockTextComponent } from '../components/ArticleBlockText/ArticleBlockText';
-import { HStack, VStack } from '@/shared/ui/Stack';
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
 
 interface ArticleDetailsProps {
     className?: string;

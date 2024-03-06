@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './NavbarRedesigned.module.scss';
-import { Text, TextSize, TextTheme } from '@/shared/ui/Text';
-import { HStack } from '@/shared/ui/Stack';
+import { Text, TextSize, TextTheme } from '@/shared/ui/deprecated/Text';
+import { HStack } from '@/shared/ui/deprecated/Stack';
 import { NotificationButton } from '@/features/NotificationButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';

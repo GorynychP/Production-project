@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from 'react'
-import { Button, ButtonTheme } from '@/shared/ui/Button'
-import { useTranslation } from 'react-i18next'
+import React, { useEffect, useState } from 'react';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import { useTranslation } from 'react-i18next';
 
 export const BugButton = () => {
-    const [error, setError] = useState(false)
-    const { t } = useTranslation()
-    const onThrow = () => setError(true)
+    const [error, setError] = useState(false);
+    const { t } = useTranslation();
+    const onThrow = () => setError(true);
     useEffect(() => {
         if (error) {
-            throw new Error()
+            throw new Error();
         }
-    }, [error])
+    }, [error]);
     return (
         <Button theme={ButtonTheme.OUTLINE} onClick={onThrow}>
             {t('Ошибка')}
         </Button>
-    )
-}
+    );
+};

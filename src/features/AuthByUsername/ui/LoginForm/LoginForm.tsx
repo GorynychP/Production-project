@@ -2,8 +2,8 @@ import React, { memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './LoginForm.module.scss';
 import { useTranslation } from 'react-i18next';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { Input } from '@/shared/ui/Input';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import { Input } from '@/shared/ui/deprecated/Input';
 import { useSelector } from 'react-redux';
 import { loginAction, loginReducer } from '../../model/slice/loginSlice';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -14,7 +14,7 @@ import {
     getLoginPassword,
 } from '../../model/selectors';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
-import { Text, TextTheme } from '@/shared/ui/Text';
+import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
 import {
     DynamicModuleLoader,
     ReducersList,
