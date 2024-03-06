@@ -1,12 +1,13 @@
 import React, { useMemo, useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './SidebarRedesigned.module.scss';
-import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { useSelector } from 'react-redux';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { VStack } from '@/shared/ui/deprecated/Stack';
-import { AppLogo } from '@/shared/ui/deprecated/AppLogo';
+import { AppLogo } from '@/shared/ui/redesigned/AppLogo';
+import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
+import { Icon } from '@/shared/ui/redesigned/Icon';
 interface SidebarRedesignedProps {
     className?: string;
 }
@@ -40,17 +41,17 @@ export const SidebarRedesigned = ({ className }: SidebarRedesignedProps) => {
                 [className],
             )}
         >
-            <AppLogo className={cls.appLogo} />
-            <Button
+            <AppLogo
+                size={collapsed ? 50 : 85}
+                className={classNames(cls.appLogo)}
+            />
+            <Icon
                 data-testid="sidebar-toggle"
-                className={cls.collapsedBtn}
                 onClick={onToggle}
-                theme={ButtonTheme.BACKGROUND_INVERTED}
-                square
-                size={ButtonSize.L}
-            >
-                {collapsed ? '>' : '<'}
-            </Button>
+                className={cls.collapseBtn}
+                Svg={ArrowIcon}
+                clickable
+            />
             <VStack role="navigation" className={cls.items} gap="16">
                 {itemsList}
             </VStack>

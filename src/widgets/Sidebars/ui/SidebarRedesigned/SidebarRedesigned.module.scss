@@ -6,21 +6,47 @@
     position: relative;
     transition: width 0.3s;
 }
-.appLogo {
-    padding-top: 20px;
-}
-
-.collapsedBtn {
-    position: absolute;
-    right: -15px;
-    top: 45%;
-}
 
 .items {
     margin-top: 20px;
-    margin-left: 30px;
+    // margin-left: 45px;
+}
+.appLogo {
+    padding-top: 20px;
+    transition: width 0.3s;
+}
+
+.collapseBtn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: 10;
+    transform: rotate(90deg);
 }
 
 .collapsed {
     width: var(--sidebar-width-collapsed);
+
+    .switchers {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .items {
+        display: flex;
+        align-items: center;
+    }
+
+    .lang {
+        margin-left: 0;
+    }
+
+    .collapseBtn {
+        transform: rotate(-90deg);
+    }
+
+    .switchers {
+        flex-direction: column;
+        align-items: center;
+    }
 }
