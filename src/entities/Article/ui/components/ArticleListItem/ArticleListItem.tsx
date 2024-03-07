@@ -16,7 +16,7 @@ import { Button } from '@/shared/ui/deprecated/Button';
 import { ArticleBlockTextComponent } from '../ArticleBlockText/ArticleBlockText';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { AppLink } from '@/shared/ui/deprecated/AppLink';
-import { AppImage } from '@/shared/ui/deprecated/AppImage';
+import { AppImage } from '@/shared/ui/redesigned/AppImage';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 
 interface ArticleListItemProps {
