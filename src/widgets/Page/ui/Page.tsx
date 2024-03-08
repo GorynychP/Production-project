@@ -33,7 +33,15 @@ export const Page = memo((props: PageProps) => {
     const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
     const dispatch = useAppDispatch();
-    useInfiniteScroll({ triggerRef, wrapperRef, callback: onScrollEnd });
+    useInfiniteScroll({
+        triggerRef,
+        wrapperRef: toggleFeatures({
+            name: 'isAppRedesigned',
+            on: () => undefined,
+            off: () => wrapperRef,
+        }),
+        callback: onScrollEnd,
+    });
     useInitialEffect(() => {
         wrapperRef.current.scrollTop = scrollPosition;
     });

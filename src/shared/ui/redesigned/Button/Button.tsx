@@ -2,14 +2,15 @@ import React, { memo, ButtonHTMLAttributes, FC, ReactNode } from 'react';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 
-export enum ButtonTheme {
-    CLEAR = 'clear',
-    CLEAR_INVERTED = 'clearInverted',
-    OUTLINE = 'outline',
-    OUTLINE_RED = 'outline_red',
-    BACKGROUND = 'background',
-    BACKGROUND_INVERTED = 'backgroundInverted',
-}
+export type ButtonTheme =
+    | 'clear'
+    | 'clearInverted'
+    | 'outline'
+    | 'outline_red'
+    | 'background'
+    | 'backgroundInverted'
+    | 'filled';
+
 export enum ButtonSize {
     M = 'size_m',
     L = 'size_l',
@@ -29,7 +30,7 @@ export const Button: FC<ButtonProps> = memo((props: ButtonProps) => {
     const {
         className,
         children,
-        theme = ButtonTheme.OUTLINE,
+        theme = 'outline',
         square,
         size = ButtonSize.M,
         disabled,

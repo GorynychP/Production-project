@@ -1,7 +1,15 @@
 .Card {
     border-radius: 12px;
 }
-
+.normal {
+    border-radius: 12px;
+}
+.light {
+    background: var(--light-bg-redesigned);
+}
+.round {
+    border-radius: 40px;
+}
 .normal {
     background-color: var(--dark-bg-redesigned);
 }

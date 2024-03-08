@@ -13,7 +13,7 @@ interface SidebarRedesignedProps {
 }
 
 export const SidebarRedesigned = ({ className }: SidebarRedesignedProps) => {
-    const [collapsed, setCollapsed] = useState(true);
+    const [collapsed, setCollapsed] = useState(false);
     const sidebarItemsList = useSelector(getSidebarItems);
     const onToggle = () => {
         setCollapsed(prev => !prev);

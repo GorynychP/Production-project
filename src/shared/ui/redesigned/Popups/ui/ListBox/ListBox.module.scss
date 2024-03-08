@@ -1,7 +1,6 @@
 .options {
     background: var(--dark-bg-redesigned);
     position: absolute;
-    // z-index: 101;
     z-index: var(--dropdown-z-index);
     box-shadow: 4px 4px 8px var(--dark-bg-redesigned);
     cursor: pointer;
@@ -17,6 +16,6 @@
     opacity: 0.8;
 }
 .selected {
-    background: var(--inverted-primary-color);
+    background: var(--light-bg-redesigned);
     color: var(--text-redesigned);
 }

@@ -1,3 +1,17 @@
+.ArticleViewSelectorRedesigned {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 16px;
+    border-radius: 32px;
+    background: var(--dark-bg-redesigned);
+    .selectedRedesigned {
+        fill: var(--light-bg-redesigned);
+    }
+}
+
 .selected {
-    color: var(--secondary-color);
+    color: var(--accent-redesigned);
 }
