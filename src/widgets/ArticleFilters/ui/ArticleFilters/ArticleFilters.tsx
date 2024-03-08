@@ -5,10 +5,12 @@ import { useTranslation } from 'react-i18next';
 import { Card } from '@/shared/ui/redesigned/Card';
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
-import { Input } from '@/shared/ui/deprecated/Input';
 import { ArticleSortField, ArticleType } from '@/entities/Article';
 import { SortOrder } from '@/shared/types/sort';
 import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Input } from '@/shared/ui/redesigned/Input';
+import SearchIcon from '@/shared/assets/icons/search.svg';
+import { Icon } from '@/shared/ui/redesigned/Icon';
 
 interface ArticleFiltersProps {
     className?: string;
@@ -46,6 +48,7 @@ export const ArticleFilters = memo((props: ArticleFiltersProps) => {
                     placeholder={t('Поиск')}
                     value={search}
                     onChange={onChangeSearch}
+                    addonLeft={<Icon width={14} height={14} Svg={SearchIcon} />}
                 />
 
                 <ArticleTypeTabs

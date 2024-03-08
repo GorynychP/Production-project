@@ -7,6 +7,8 @@ import { HStack } from '../../../Stack';
 import { DropdownDirection } from '@/shared/types/ui';
 import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';
+import { Icon } from '../../../Icon';
+import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
 interface ListBoxItem<T extends string> {
     value: T;
     content: ReactNode;
@@ -56,7 +58,11 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
                 onChange={onChange}
             >
                 <HListBox.Button as="div" className={popupCls.trigger}>
-                    <Button theme="filled" disabled={readonly}>
+                    <Button
+                        theme="filled"
+                        disabled={readonly}
+                        addonRight={<Icon Svg={ArrowIcon} />}
+                    >
                         {selectedItem?.content ?? defaultValue}
                     </Button>
                 </HListBox.Button>

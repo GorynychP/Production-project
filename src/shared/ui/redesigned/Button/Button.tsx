@@ -1,4 +1,10 @@
-import React, { memo, ButtonHTMLAttributes, FC, ReactNode } from 'react';
+import React, {
+    memo,
+    ButtonHTMLAttributes,
+    FC,
+    ReactNode,
+    ReactElement,
+} from 'react';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 
@@ -24,6 +30,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     size?: ButtonSize;
     disabled?: boolean;
     fullWidth?: boolean;
+    addonLeft?: ReactElement;
+    addonRight?: ReactElement;
 }
 
 export const Button: FC<ButtonProps> = memo((props: ButtonProps) => {
@@ -35,12 +43,15 @@ export const Button: FC<ButtonProps> = memo((props: ButtonProps) => {
         size = ButtonSize.M,
         disabled,
         fullWidth,
+        addonLeft,
+        addonRight,
         ...otherProps
     } = props;
     const mods: Mods = {
         [cls.square]: square,
         [cls.disabled]: disabled,
         [cls.fullWidth]: fullWidth,
+        [cls.withAddon]: Boolean(addonLeft) || Boolean(addonRight),
     };
     return (
         <button
@@ -52,7 +63,9 @@ export const Button: FC<ButtonProps> = memo((props: ButtonProps) => {
             disabled={disabled}
             {...otherProps}
         >
+            <div className={cls.addonLeft}>{addonLeft}</div>
             {children}
+            <div className={cls.addonRight}>{addonRight}</div>
         </button>
     );
 });
