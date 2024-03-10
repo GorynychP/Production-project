@@ -8,6 +8,8 @@ import React, {
 } from 'react';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
+import { HStack } from '../Stack';
+import { Text } from '../Text';
 
 type HTMLInputProps = Omit<
     InputHTMLAttributes<HTMLInputElement>,
@@ -20,8 +22,10 @@ interface InputProps extends HTMLInputProps {
     onChange?: (value: string) => void;
     autofocus?: boolean;
     readonly?: boolean;
+    label?: string;
     addonLeft?: ReactElement;
     addonRight?: ReactElement;
+    disabled?: boolean;
 }
 export const Input = memo((props: InputProps) => {
     const {
@@ -33,6 +37,8 @@ export const Input = memo((props: InputProps) => {
         readonly,
         addonLeft,
         addonRight,
+        label,
+        disabled,
         ...otherProps
     } = props;
     const refInput = useRef<HTMLInputElement>(null);
@@ -62,20 +68,24 @@ export const Input = memo((props: InputProps) => {
         [cls.withAddonRight]: Boolean(addonRight),
     };
     return (
-        <div className={classNames(cls.InputWrapper, mods, [className])}>
-            <div className={cls.addonLeft}>{addonLeft}</div>
-            <input
-                ref={refInput}
-                className={cls.input}
-                type={type}
-                value={value}
-                onChange={onChangeHandler}
-                onBlur={onBlur}
-                onFocus={onFocus}
-                readOnly={readonly}
-                {...otherProps}
-            />
-            <div className={cls.addonRight}>{addonRight}</div>
-        </div>
+        <HStack gap="12" align="center">
+            {label && <Text className={cls.label} text={label + ':'} />}
+            <div className={classNames(cls.InputWrapper, mods, [className])}>
+                <div className={cls.addonLeft}>{addonLeft}</div>
+                <input
+                    ref={refInput}
+                    className={cls.input}
+                    type={type}
+                    value={value}
+                    onChange={onChangeHandler}
+                    onBlur={onBlur}
+                    onFocus={onFocus}
+                    readOnly={readonly}
+                    disabled={disabled}
+                    {...otherProps}
+                />
+                <div className={cls.addonRight}>{addonRight}</div>
+            </div>
+        </HStack>
     );
 });

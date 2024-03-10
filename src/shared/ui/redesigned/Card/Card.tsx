@@ -3,13 +3,15 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Card.module.scss';
 
 export type CardTheme = 'normal' | 'outlined' | 'light';
-export type CardPadding = '0' | '8' | '16' | '24';
+export type CardPadding = '0' | '8' | '16' | '24' | '32' | '40';
 export type CardBorder = 'round' | 'normal';
 const mapPaddingToClasses: Record<CardPadding, string> = {
     '0': 'gap_0',
     '8': 'gap_8',
     '16': 'gap_16',
     '24': 'gap_24',
+    '32': 'gap_32',
+    '40': 'gap_40',
 };
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
