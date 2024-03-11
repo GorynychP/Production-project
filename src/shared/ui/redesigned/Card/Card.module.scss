@@ -10,10 +10,11 @@
 .round {
     border-radius: 40px;
 }
-.normal {
+.default {
     background-color: var(--dark-bg-redesigned);
 }
 .outlined {
+    background-color: var(--dark-bg-redesigned);
     border: 1px solid var(--accent-redesigned);
 }
 .max {

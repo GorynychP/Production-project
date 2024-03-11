@@ -4,7 +4,7 @@ import cls from './ArticleList.module.scss';
 import { useTranslation } from 'react-i18next';
 import { Article, ArticleView } from '../../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
-import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
+import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton/ArticleListItemSkeleton';
 import { Text, TextAlign, TextSize } from '@/shared/ui/deprecated/Text';
 
 interface ArticleListProps {
@@ -69,6 +69,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
             className={classNames(cls.ArticleList, {}, [className, cls[view]])}
             data-testid="ArticleList"
         >
+            {/* {getSkeletons(view)} */}
             {articles.length > 0 ? articles.map(renderArticleItem) : null}
             {isLoading && getSkeletons(view)}
         </div>

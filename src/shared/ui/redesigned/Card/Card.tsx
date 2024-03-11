@@ -2,7 +2,7 @@ import React, { HTMLAttributes, ReactNode } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Card.module.scss';
 
-export type CardTheme = 'normal' | 'outlined' | 'light';
+export type CardTheme = 'default' | 'outlined' | 'light';
 export type CardPadding = '0' | '8' | '16' | '24' | '32' | '40';
 export type CardBorder = 'round' | 'normal';
 const mapPaddingToClasses: Record<CardPadding, string> = {
@@ -26,7 +26,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
 export const Card = ({
     className,
     children,
-    theme = 'normal',
+    theme = 'default',
     max,
     padding = '0',
     border = 'normal',

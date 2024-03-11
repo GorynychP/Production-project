@@ -29,12 +29,13 @@
     }
     .textBlock {
         max-height: 200px;
-        overflow-y: hidden;
     }
     .footer {
+        width: 100%;
         margin-top: 16px;
         display: flex;
         align-items: center;
+        justify-content: space-between;
     }
 }
 
@@ -85,7 +86,6 @@
         width: 200px;
         margin-top: 10px;
         white-space: nowrap;
-        overflow: hidden;
         text-overflow: ellipsis;
     }
 }

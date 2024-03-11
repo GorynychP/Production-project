@@ -1,0 +1,33 @@
+.BIG {
+    width: 85%;
+    min-width: 350px;
+    transition: 0.2s;
+    .date {
+        margin-left: auto;
+    }
+    .image {
+        width: 100%;
+        border-radius: 10px;
+        max-height: 350px;
+        object-fit: cover;
+    }
+    .textBlock {
+        max-height: 100px;
+        overflow-y: hidden;
+    }
+}
+
+.SMALL {
+    width: 230px;
+    .wrapper {
+        padding: 16px;
+        height: 330px;
+        position: relative;
+    }
+    .image {
+        height: 140px;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        object-fit: cover;
+    }
+}
