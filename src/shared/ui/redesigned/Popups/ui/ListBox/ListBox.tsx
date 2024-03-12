@@ -45,15 +45,16 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
         <HStack
             gap="4"
             align="center"
-            className={classNames('', { [cls.readonly]: readonly }, [
-                popupCls.popup,
-            ])}
+            className={classNames('', { [cls.readonly]: readonly }, [])}
         >
             {label && <span className={cls.label}>{`${label} >`}</span>}
             <HListBox
                 as={'div'}
                 disabled={readonly}
-                className={classNames(cls.ListBox, {}, [className])}
+                className={classNames(cls.ListBox, {}, [
+                    className,
+                    popupCls.popup,
+                ])}
                 value={value}
                 onChange={onChange}
             >
