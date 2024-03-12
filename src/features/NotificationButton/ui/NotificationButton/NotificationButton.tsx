@@ -10,7 +10,7 @@ import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon';
 import { NotificationList } from '@/entities/Notification';
 import NotificationIcon from '@/shared/assets/icons/Vector2.svg';
 import NotificationIconDeprecated from '@/shared/assets/icons/Vector.svg';
-import { Drawer } from '@/shared/ui/deprecated/Drawer';
+import { Drawer } from '@/shared/ui/redesigned/Drawer';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Icon } from '@/shared/ui/redesigned/Icon';

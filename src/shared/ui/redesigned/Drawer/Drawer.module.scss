@@ -9,6 +9,17 @@
     align-items: flex-end;
 }
 
+.drawerNew {
+    .sheet {
+        background: var(--light-bg-redesigned);
+    }
+}
+.drawerOld {
+    .sheet {
+        background: var(--bg-color);
+    }
+}
+
 .opened {
     pointer-events: auto;
     opacity: 1;

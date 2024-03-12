@@ -13,6 +13,19 @@
     align-items: center;
 }
 
+.modalNew {
+    .content {
+        background: var(--light-bg-redesigned);
+        color: var(--text-redesigned);
+    }
+}
+.modalOld {
+    .content {
+        background: var(--bg-color);
+        color: var(--primary-color);
+    }
+}
+
 .overlay {
     width: 100%;
     height: 100%;
