@@ -2,8 +2,8 @@ import React, { useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './AddCommentForm.module.scss';
 import { useTranslation } from 'react-i18next';
-import { Input } from '@/shared/ui/deprecated/Input';
-import { Button } from '@/shared/ui/deprecated/Button';
+import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input';
+import { Button as ButtonDeprecated } from '@/shared/ui/deprecated/Button';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import {
@@ -19,6 +19,10 @@ import {
     addCommentFormReducer,
 } from '../../model/slice/addCommentFormSlice';
 import { HStack } from '@/shared/ui/deprecated/Stack';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Input } from '@/shared/ui/redesigned/Input';
+import { Button } from '@/shared/ui/redesigned/Button';
+import { Card } from '@/shared/ui/redesigned/Card';
 
 export interface AddCommentFormProps {
     className?: string;
@@ -43,30 +47,63 @@ const AddCommentForm = ({ className, onSendComment }: AddCommentFormProps) => {
         onSendComment(text || '');
         onCommentTextChange('');
     }, [onSendComment, onCommentTextChange, text]);
-    return (
-        <DynamicModuleLoader reducers={reducer}>
-            <HStack
-                max
-                justify="between"
-                align="center"
-                className={classNames(cls.AddCommentForm, {}, [className])}
-                data-testid="AddCommentForm"
-            >
-                <Input
-                    className={cls.input}
-                    value={text}
-                    onChange={onCommentTextChange}
-                    placeholder={t('Введите текст комментария')}
-                    data-testid="AddCommentForm.Input"
-                />
-                <Button
-                    data-testid="AddCommentForm.Button"
-                    onClick={onSendHandler}
+
+    const content = (
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={
+                <HStack
+                    max
+                    justify="between"
+                    align="center"
+                    className={classNames(cls.AddCommentFormRedesigned, {}, [
+                        className,
+                    ])}
+                    data-testid="AddCommentForm"
                 >
-                    {t('Отправить')}
-                </Button>
-            </HStack>
-        </DynamicModuleLoader>
+                    <Input
+                        className={cls.input}
+                        value={text}
+                        onChange={onCommentTextChange}
+                        placeholder={t('Введите текст комментария')}
+                        data-testid="AddCommentForm.Input"
+                    />
+                    <Button
+                        data-testid="AddCommentForm.Button"
+                        onClick={onSendHandler}
+                    >
+                        {t('Отправить')}
+                    </Button>
+                </HStack>
+            }
+            off={
+                <HStack
+                    max
+                    justify="between"
+                    align="center"
+                    className={classNames(cls.AddCommentForm, {}, [className])}
+                    data-testid="AddCommentForm"
+                >
+                    <InputDeprecated
+                        className={cls.input}
+                        value={text}
+                        onChange={onCommentTextChange}
+                        placeholder={t('Введите текст комментария')}
+                        data-testid="AddCommentForm.Input"
+                    />
+                    <ButtonDeprecated
+                        data-testid="AddCommentForm.Button"
+                        onClick={onSendHandler}
+                    >
+                        {t('Отправить')}
+                    </ButtonDeprecated>
+                </HStack>
+            }
+        />
+    );
+
+    return (
+        <DynamicModuleLoader reducers={reducer}>{content}</DynamicModuleLoader>
     );
 };
 export default AddCommentForm;

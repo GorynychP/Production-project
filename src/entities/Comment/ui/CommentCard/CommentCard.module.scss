@@ -1,20 +1,25 @@
+.CommentCardRedesigned {
+    padding: 10px;
+    border: 3px solid var(--light-bg-redesigned);
+    border-radius: 30px;
+}
 .CommentCard {
-	padding: 10px;
-	border: 1px solid var(--primary-color);
+    padding: 10px;
+    border: 1px solid var(--primary-color);
 }
 
 .header {
-	display: flex;
-	align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .username {
-	margin-left: 10px;
+    margin-left: 10px;
 }
 
 .text {
-	margin-top: 10px;
+    margin-top: 10px;
 }
 .loading {
-	border: none;
+    border: none;
 }

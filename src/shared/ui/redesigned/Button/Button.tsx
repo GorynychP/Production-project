@@ -13,7 +13,8 @@ export type ButtonTheme =
     | 'clear'
     | 'clearInverted'
     | 'outline'
-    | 'outline_red'
+    | 'outline_cancel'
+    | 'outline_save'
     | 'background'
     | 'backgroundInverted'
     | 'filled';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Text } from '@/shared/ui/deprecated/Text';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
 import { AddCommentForm } from '@/features/addCommentForm';
 import { CommentList } from '@/entities/Comment';
 import { VStack } from '@/shared/ui/deprecated/Stack';
@@ -12,6 +12,8 @@ import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlic
 import { getArticleDetailsCommentsLoading } from '../../model/selectors/commentsSelectors/commentsSelectors';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 interface ArticleDetailsCommendsProps {
     className?: string;
@@ -34,8 +36,12 @@ export const ArticleDetailsCommends = ({
         dispatch(addCommentForArticle(text));
     };
     return (
-        <VStack max gap="20" className={classNames('', {}, [className])}>
-            <Text title={t('Комментарии')}></Text>
+        <VStack max gap="24" className={classNames('', {}, [className])}>
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                on={<Text title={t('Комментарии')}></Text>}
+                off={<TextDeprecated title={t('Комментарии')}></TextDeprecated>}
+            />
             <AddCommentForm onSendComment={onSendComment} />
             <CommentList isLoading={commentsIsLoading} comments={comments} />
         </VStack>

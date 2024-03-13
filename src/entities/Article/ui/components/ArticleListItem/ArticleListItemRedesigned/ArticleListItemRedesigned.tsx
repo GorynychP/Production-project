@@ -54,7 +54,6 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
                                 text={article?.user.username}
                             />
                             <Text
-                                size="xl"
                                 className={cls.date}
                                 text={article?.createdAt}
                             />

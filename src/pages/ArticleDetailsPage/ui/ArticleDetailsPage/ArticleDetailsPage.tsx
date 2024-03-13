@@ -64,7 +64,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                                     [className],
                                 )}
                             >
-                                <Card border="round" padding="24">
+                                <Card border="normal" padding="24">
                                     <VStack gap="20" max>
                                         <ArticleDetails id={id} />
                                         <ArticleRating articleId={id} />

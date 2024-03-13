@@ -36,10 +36,21 @@
         border: 1px solid var(--accent-redesigned);
     }
 }
-.outline_red {
-    border: 1px solid var(--red-light);
-    color: var(--red-light);
-    // background: none;
+.outline_cancel {
+    border: 1px solid var(--cancel-redesigned);
+    color: var(--cancel-redesigned);
+    border-radius: 34px;
+    &:hover {
+        border: 2px solid var(--accent-redesigned);
+    }
+}
+.outline_save {
+    border: 1px solid var(--save-redesigned);
+    color: var(--save-redesigned);
+    border-radius: 34px;
+    &:hover {
+        border: 2px solid var(--accent-redesigned);
+    }
 }
 
 .background {

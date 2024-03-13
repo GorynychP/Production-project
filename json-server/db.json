@@ -897,6 +897,12 @@
       "userId": "1",
       "text": "норм",
       "id": "aj3VRM9"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo nam facilis, consequatur quod et voluptatibus assumenda eveniet quas adipisci atque totam velit commodi molestias vero hic mollitia sequi tenetur odio.",
+      "id": "aCoegQu"
     }
   ],
   "posts": [
@@ -989,6 +995,24 @@
       "articleId": "9",
       "rate": 4,
       "id": "u-Md53-"
+    },
+    {
+      "userId": "1",
+      "articleId": "10",
+      "rate": 2,
+      "id": "DVKZKOW"
+    },
+    {
+      "userId": "1",
+      "articleId": "12",
+      "rate": 2,
+      "id": "DecUJLY"
+    },
+    {
+      "userId": "1",
+      "articleId": "11",
+      "rate": 1,
+      "id": "IXXqzZ1"
     }
   ]
 }

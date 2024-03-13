@@ -68,7 +68,7 @@ export const Input = memo((props: InputProps) => {
         [cls.withAddonRight]: Boolean(addonRight),
     };
     return (
-        <HStack gap="12" align="center">
+        <HStack gap="12" align="center" max>
             {label && <Text className={cls.label} text={label + ':'} />}
             <div className={classNames(cls.InputWrapper, mods, [className])}>
                 <div className={cls.addonLeft}>{addonLeft}</div>

@@ -36,7 +36,6 @@
 }
 
 .content {
-    padding: 20px;
     border-radius: 12px;
     background: var(--bg-color);
 
@@ -59,4 +58,23 @@
     .content {
         transform: scale(0.2);
     }
+}
+
+.gap_0 {
+    padding: 0px;
+}
+.gap_8 {
+    padding: 8px;
+}
+.gap_16 {
+    padding: 16px;
+}
+.gap_24 {
+    padding: 24px;
+}
+.gap_32 {
+    padding: 32px;
+}
+.gap_40 {
+    padding: 40px;
 }
