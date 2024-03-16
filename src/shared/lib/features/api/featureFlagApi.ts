@@ -1,9 +1,9 @@
 import { rtkApi } from '@/shared/api/rtkApi';
-import { FeatureFlag } from '@/shared/types/featureFlag';
+import { FeatureFlags } from '@/shared/types/featureFlag';
 
 interface UpdateFeatureFlagOptions {
     userId?: string;
-    features: Partial<FeatureFlag>;
+    features: Partial<FeatureFlags>;
 }
 
 const featureFlagApi = rtkApi.injectEndpoints({

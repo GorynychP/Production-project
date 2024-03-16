@@ -37,7 +37,7 @@ export const Tabs = (props: TabsProps) => {
                         className={classNames(cls.tab, {
                             [cls.selected]: isSelected,
                         })}
-                        theme={isSelected ? 'light' : 'normal'}
+                        theme={isSelected ? 'light' : 'default'}
                         onClick={clickHandle(tab)}
                         border="round"
                     >

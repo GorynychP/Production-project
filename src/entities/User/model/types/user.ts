@@ -1,4 +1,4 @@
-import { FeatureFlag } from '@/shared/types/featureFlag';
+import { FeatureFlags } from '@/shared/types/featureFlag';
 
 export enum UserRole {
     ADMIN = 'ADMIN',
@@ -12,7 +12,7 @@ export interface User {
     username: string;
     avatar?: string;
     roles?: UserRole[];
-    features?: FeatureFlag;
+    features?: FeatureFlags;
 }
 export interface UserSchema {
     authData?: User;
