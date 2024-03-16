@@ -43,39 +43,20 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     }, [dispatch, id]);
 
     let content;
-
+    // const test = true;
     if (isLoading) {
         content = (
             <ToggleFeatures
                 feature="isAppRedesigned"
                 on={
-                    <VStack max>
-                        <Skeleton
-                            className={cls.avatar}
-                            width={200}
-                            height={200}
-                            border="50%"
-                        />
-                        <Skeleton
-                            className={cls.title}
-                            width={300}
-                            height={32}
-                        />
-                        <Skeleton
-                            className={cls.skeleton}
-                            width={600}
-                            height={24}
-                        />
-                        <Skeleton
-                            className={cls.skeleton}
-                            width={'100%'}
-                            height={200}
-                        />
-                        <Skeleton
-                            className={cls.skeleton}
-                            width={'100%'}
-                            height={200}
-                        />
+                    <VStack max gap="20">
+                        <Skeleton width={300} height={36} />
+                        <Skeleton width={600} height={24} />
+                        <Skeleton width={'100%'} height={400} />
+                        <Skeleton width={300} height={24} />
+                        <Skeleton width={'100%'} height={250} />
+                        <Skeleton width={300} height={24} />
+                        <Skeleton width={'100%'} height={250} />
                     </VStack>
                 }
                 off={

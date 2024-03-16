@@ -14,6 +14,7 @@ export const LoginModal = (props: LoginModalProps) => {
     const { className, isOpen, onClose } = props;
     return (
         <Modal
+            padding="32"
             isOpen={isOpen}
             onClose={onClose}
             className={classNames('', {}, [className])}
