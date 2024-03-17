@@ -11,11 +11,13 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { PageLoader } from '@/widgets/PageLoader';
 import { MainLayout } from '@/shared/layouts/MainLayout';
 import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
+import { useAppToolbar } from './lib/useAppToolbar';
 
 const App = () => {
     const { theme } = useTheme();
     const inited = useSelector(getUserAuthInited);
     const dispatch = useAppDispatch();
+    const toolbar = useAppToolbar();
     useEffect(() => {
         dispatch(initAuthData());
     }, [dispatch]);
@@ -59,7 +61,7 @@ const App = () => {
                             header={<Navbar />}
                             sidebar={<Sidebar />}
                             content={<AppRouter />}
-                            toolbar={<div>Toolbar</div>}
+                            toolbar={toolbar}
                         />
                     </Suspense>
                 </div>
