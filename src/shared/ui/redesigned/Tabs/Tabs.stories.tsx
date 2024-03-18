@@ -6,8 +6,9 @@ import { action } from '@storybook/addon-actions';
 import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof Tabs> = {
-    title: 'shared/Tabs',
+    title: 'shared/redesigned/Tabs',
     component: Tabs,
+    decorators: [ThemeDecorator(Theme.LIGHT, 'app_redesigned')],
 };
 
 export default meta;
@@ -35,5 +36,5 @@ export const Dark: Story = {
         value: 'tab2',
         onTabClick: action('onTabClick'),
     },
-    decorators: [ThemeDecorator(Theme.DARK)],
+    decorators: [ThemeDecorator(Theme.DARK, 'app_redesigned')],
 };

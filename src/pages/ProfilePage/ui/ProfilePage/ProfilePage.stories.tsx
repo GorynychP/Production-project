@@ -8,6 +8,7 @@ import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
 import { ValidateProfileErrors } from '@/features/editableProfileCard/model/types/editableProfileCardSchema';
 import { Profile } from '@/entities/Profile';
+import { NewDesignedDecorator } from '@/shared/config/storybook/NewDesignedDecorator/NewDesignedDecorator';
 const profile: Profile = {
     id: '1',
     username: 'admin',
@@ -78,6 +79,54 @@ export const Loading: Story = {
     args: {},
     decorators: [
         ThemeDecorator(Theme.DARK),
+        StoreDecorator({ profile: { isLoading: true } }),
+    ],
+};
+
+export const NormalRedesigned: Story = {
+    args: {},
+    decorators: [NewDesignedDecorator()],
+};
+export const ReadonlyRedesigned: Story = {
+    args: {},
+    decorators: [
+        StoreDecorator({
+            profile: { readonly: true, form: profile },
+        }),
+        NewDesignedDecorator(),
+    ],
+};
+
+export const DarkRedesigned: Story = {
+    args: {},
+    decorators: [NewDesignedDecorator(Theme.DARK)],
+};
+
+export const ErrorRedesigned: Story = {
+    args: {},
+    decorators: [
+        NewDesignedDecorator(Theme.DARK),
+        StoreDecorator({ profile: { error: 'error' } }),
+    ],
+};
+export const ValidationErrorRedesigned: Story = {
+    args: {},
+    decorators: [
+        NewDesignedDecorator(Theme.DARK),
+        StoreDecorator({
+            profile: {
+                validateError: [
+                    ValidateProfileErrors.INCORRECT_USERNAME,
+                    ValidateProfileErrors.INCORRECT_AGE,
+                ],
+            },
+        }),
+    ],
+};
+export const LoadingRedesigned: Story = {
+    args: {},
+    decorators: [
+        NewDesignedDecorator(Theme.DARK),
         StoreDecorator({ profile: { isLoading: true } }),
     ],
 };

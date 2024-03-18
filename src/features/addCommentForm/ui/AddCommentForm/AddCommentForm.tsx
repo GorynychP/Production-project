@@ -22,7 +22,6 @@ import { HStack } from '@/shared/ui/deprecated/Stack';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Input } from '@/shared/ui/redesigned/Input';
 import { Button } from '@/shared/ui/redesigned/Button';
-import { Card } from '@/shared/ui/redesigned/Card';
 
 export interface AddCommentFormProps {
     className?: string;

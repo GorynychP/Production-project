@@ -7,6 +7,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { Profile } from '@/entities/Profile';
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
+import { NewDesignedDecorator } from '@/shared/config/storybook/NewDesignedDecorator/NewDesignedDecorator';
 const profile: Profile = {
     age: 20,
     avatar: '',
@@ -24,6 +25,7 @@ const meta: Meta<typeof EditableProfileCard> = {
     decorators: [
         StoreDecorator({
             profile: { data: profile, form: profile },
+            user: { _inited: true, authData: { id: '1' } },
         }),
     ],
 };
@@ -38,4 +40,13 @@ export const Normal: Story = {
 export const Dark: Story = {
     args: {},
     decorators: [ThemeDecorator(Theme.DARK)],
+};
+export const NormalRedesigned: Story = {
+    args: {},
+    decorators: [NewDesignedDecorator()],
+};
+
+export const DarkRedesigned: Story = {
+    args: {},
+    decorators: [NewDesignedDecorator(Theme.DARK)],
 };

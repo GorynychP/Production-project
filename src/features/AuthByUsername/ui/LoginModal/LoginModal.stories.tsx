@@ -4,6 +4,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Theme } from '@/shared/const/theme';
 import { LoginModal } from './LoginModal';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { NewDesignedDecorator } from '@/shared/config/storybook/NewDesignedDecorator/NewDesignedDecorator';
 
 const meta: Meta<typeof LoginModal> = {
     title: 'features/LoginModal',
@@ -29,4 +30,14 @@ export const Normal: Story = {
 export const Dark: Story = {
     args: { isOpen: true },
     decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({})],
+};
+
+export const NormalDecorator: Story = {
+    args: { isOpen: true },
+    decorators: [NewDesignedDecorator(), StoreDecorator({})],
+};
+
+export const DarkDecorator: Story = {
+    args: { isOpen: true },
+    decorators: [NewDesignedDecorator(Theme.DARK), StoreDecorator({})],
 };

@@ -4,6 +4,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Theme } from '@/shared/const/theme';
 import { ArticleListItem } from './ArticleListItem';
 import { Article, ArticleView } from '@/entities/Article/model/types/article';
+import { FeaturesFlagDecorator } from '@/shared/config/storybook/FeaturesFlagDecorator/FeaturesFlagDecorator';
 const meta: Meta<typeof ArticleListItem> = {
     title: 'entities/Article/ArticleListItem',
     component: ArticleListItem,
@@ -99,4 +100,34 @@ export const BigNormal: Story = {
 export const BigDark: Story = {
     args: { article, view: ArticleView.BIG },
     decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const SmallNormalRedesigned: Story = {
+    args: { article, view: ArticleView.SMALL },
+    decorators: [
+        ThemeDecorator(Theme.LIGHT, 'app_redesigned'),
+        FeaturesFlagDecorator({ isAppRedesigned: true }),
+    ],
+};
+export const SmallDarkRedesigned: Story = {
+    args: { article, view: ArticleView.SMALL },
+    decorators: [
+        ThemeDecorator(Theme.DARK, 'app_redesigned'),
+        FeaturesFlagDecorator({ isAppRedesigned: true }),
+    ],
+};
+
+export const BigNormalRedesigned: Story = {
+    args: { article, view: ArticleView.BIG },
+    decorators: [
+        ThemeDecorator(Theme.LIGHT, 'app_redesigned'),
+        FeaturesFlagDecorator({ isAppRedesigned: true }),
+    ],
+};
+export const BigDarkRedesigned: Story = {
+    args: { article, view: ArticleView.BIG },
+    decorators: [
+        ThemeDecorator(Theme.DARK, 'app_redesigned'),
+        FeaturesFlagDecorator({ isAppRedesigned: true }),
+    ],
 };

@@ -4,7 +4,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { StarRating } from './StarRating';
 import { Theme } from '@/shared/const/theme';
 const meta: Meta<typeof StarRating> = {
-    title: 'shared/StarRating',
+    title: 'shared/deprecated/StarRating',
     component: StarRating,
 };
 

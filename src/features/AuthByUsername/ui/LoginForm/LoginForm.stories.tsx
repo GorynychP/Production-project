@@ -4,6 +4,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Theme } from '@/shared/const/theme';
 import LoginForm from './LoginForm';
+import { NewDesignedDecorator } from '@/shared/config/storybook/NewDesignedDecorator/NewDesignedDecorator';
 
 const meta: Meta<typeof LoginForm> = {
     title: 'features/LoginForm',
@@ -53,5 +54,41 @@ export const Loading: Story = {
         StoreDecorator({
             loginForm: { isLoading: true },
         }),
+    ],
+};
+export const NormalRedesigned: Story = {
+    args: {},
+    decorators: [StoreDecorator({}), NewDesignedDecorator()],
+};
+
+export const DarkRedesigned: Story = {
+    args: {},
+    decorators: [
+        StoreDecorator({
+            loginForm: { username: 'Ivan', password: '123' },
+        }),
+        NewDesignedDecorator(Theme.DARK),
+    ],
+};
+export const withErrorRedesigned: Story = {
+    args: {},
+    decorators: [
+        StoreDecorator({
+            loginForm: {
+                username: 'Ivan',
+                password: '123',
+                error: 'error text',
+            },
+        }),
+        NewDesignedDecorator(),
+    ],
+};
+export const LoadingRedesigned: Story = {
+    args: {},
+    decorators: [
+        StoreDecorator({
+            loginForm: { isLoading: true },
+        }),
+        NewDesignedDecorator(),
     ],
 };

@@ -31,7 +31,7 @@ export const NotificationList = memo((props: NotificationListProps) => {
                             className,
                         ])}
                     >
-                        {new Array(3).fill(0).map((_, index) => (
+                        {new Array(4).fill(0).map((_, index) => (
                             <Skeleton
                                 key={index}
                                 border="8px"

@@ -5,7 +5,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof Button> = {
-    title: 'shared/Button',
+    title: 'shared/deprecated/Button',
     component: Button,
     // parameters: {
     // 	layout: 'centered',

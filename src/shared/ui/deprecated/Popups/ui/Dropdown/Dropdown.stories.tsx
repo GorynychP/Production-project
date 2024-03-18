@@ -5,7 +5,7 @@ import { Theme } from '@/shared/const/theme';
 import { Dropdown } from './Dropdown';
 import { Button } from '../../../../deprecated/Button/Button';
 const meta: Meta<typeof Dropdown> = {
-    title: 'shared/Popups/Dropdown',
+    title: 'shared/deprecated/Popups/Dropdown',
     component: Dropdown,
 };
 

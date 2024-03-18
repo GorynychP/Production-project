@@ -5,7 +5,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof Button> = {
-    title: 'shared/Button',
+    title: 'shared/redesigned/Button',
     component: Button,
     // parameters: {
     // 	layout: 'centered',
@@ -15,6 +15,7 @@ const meta: Meta<typeof Button> = {
     argTypes: {
         // backgroundColor: { control: 'color' },
     },
+    decorators: [ThemeDecorator(Theme.LIGHT, 'app_redesigned')],
 };
 
 export default meta;
@@ -64,46 +65,22 @@ export const OutlineSizeXL: Story = {
     },
 };
 
-export const OutlineDark: Story = {
+export const FilledDark: Story = {
     args: {
         children: 'Text',
-        theme: 'outline',
+        theme: 'filled',
     },
-    decorators: [ThemeDecorator(Theme.DARK)],
+    decorators: [ThemeDecorator(Theme.DARK, 'app_redesigned')],
 };
-export const Background: Story = {
+export const OutlineSave: Story = {
     args: {
         children: 'Text',
-        theme: 'background',
+        theme: 'outline_save',
     },
 };
-export const BackgroundInverted: Story = {
+export const OutlineCancel: Story = {
     args: {
         children: 'Text',
-        theme: 'backgroundInverted',
-    },
-};
-export const SquareSizeM: Story = {
-    args: {
-        children: '>',
-        theme: 'backgroundInverted',
-        square: true,
-        size: ButtonSize.M,
-    },
-};
-export const SquareSizeL: Story = {
-    args: {
-        children: '>',
-        theme: 'backgroundInverted',
-        square: true,
-        size: ButtonSize.L,
-    },
-};
-export const SquareSizeXL: Story = {
-    args: {
-        children: '>',
-        theme: 'backgroundInverted',
-        square: true,
-        size: ButtonSize.XL,
+        theme: 'outline_cancel',
     },
 };

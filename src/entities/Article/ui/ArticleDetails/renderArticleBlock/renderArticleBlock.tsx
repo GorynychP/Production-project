@@ -1,3 +1,4 @@
+import React from 'react';
 import { ArticleBlock, ArticleBlockType } from '../../../model/types/article';
 import { ArticleBlockCodeComponent } from '../../components/ArticleBlockCode/ArticleBlockCode';
 import { ArticleBlockImageComponent } from '../../components/ArticleBlockImage/ArticleBlockImage';

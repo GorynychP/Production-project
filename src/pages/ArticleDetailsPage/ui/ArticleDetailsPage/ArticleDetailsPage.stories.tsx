@@ -9,6 +9,7 @@ import {
     ArticleBlockType,
     ArticleType,
 } from '@/entities/Article/model/types/article';
+import { NewDesignedDecorator } from '@/shared/config/storybook/NewDesignedDecorator/NewDesignedDecorator';
 const article: Article = {
     id: '1',
     title: 'Javascript news',
@@ -100,4 +101,9 @@ export const Normal: Story = {
 export const Dark: Story = {
     args: {},
     decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const DarkRedesigned: Story = {
+    args: {},
+    decorators: [NewDesignedDecorator(Theme.DARK)],
 };

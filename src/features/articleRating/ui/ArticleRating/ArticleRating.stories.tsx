@@ -4,6 +4,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Theme } from '@/shared/const/theme';
 import ArticleRating from './ArticleRating';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { NewDesignedDecorator } from '@/shared/config/storybook/NewDesignedDecorator/NewDesignedDecorator';
 
 const meta: Meta<typeof ArticleRating> = {
     title: 'features/ArticleRating',
@@ -21,4 +22,13 @@ export const Normal: Story = {
 export const Dark: Story = {
     args: {},
     decorators: [ThemeDecorator(Theme.DARK)],
+};
+export const NormalRedesigned: Story = {
+    args: {},
+    decorators: [NewDesignedDecorator()],
+};
+
+export const DarkRedesigned: Story = {
+    args: {},
+    decorators: [NewDesignedDecorator(Theme.DARK)],
 };

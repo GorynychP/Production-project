@@ -4,7 +4,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Flex } from './Flex';
 import { Theme } from '@/shared/const/theme';
 const meta: Meta<typeof Flex> = {
-    title: 'shared/Flex',
+    title: 'shared/deprecated/Flex',
     component: Flex,
 };
 

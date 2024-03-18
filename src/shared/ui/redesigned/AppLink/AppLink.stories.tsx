@@ -5,7 +5,7 @@ import { Theme } from '@/shared/const/theme';
 import { AppLink, AppLinkTheme } from './AppLink';
 
 const meta: Meta<typeof AppLink> = {
-    title: 'shared/AppLink',
+    title: 'shared/redesigned/AppLink',
     component: AppLink,
     // parameters: {
     // 	layout: 'centered',
@@ -15,6 +15,7 @@ const meta: Meta<typeof AppLink> = {
     args: {
         to: '/',
     },
+    decorators: [ThemeDecorator(Theme.LIGHT, 'app_redesigned')],
 };
 
 export default meta;
@@ -37,7 +38,7 @@ export const PrimaryDark: Story = {
         children: 'Text',
         theme: 'primary',
     },
-    decorators: [ThemeDecorator(Theme.DARK)],
+    decorators: [ThemeDecorator(Theme.DARK, 'app_redesigned')],
 };
 
 export const SecondaryDark: Story = {
@@ -45,5 +46,5 @@ export const SecondaryDark: Story = {
         children: 'Text',
         theme: 'secondary',
     },
-    decorators: [ThemeDecorator(Theme.DARK)],
+    decorators: [ThemeDecorator(Theme.DARK, 'app_redesigned')],
 };

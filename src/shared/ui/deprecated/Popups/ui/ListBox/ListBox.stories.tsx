@@ -4,7 +4,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { ListBox } from './ListBox';
 import { Theme } from '@/shared/const/theme';
 const meta: Meta<typeof ListBox> = {
-    title: 'shared/Popups/ListBox',
+    title: 'shared/deprecated/Popups/ListBox',
     component: ListBox,
 };
 

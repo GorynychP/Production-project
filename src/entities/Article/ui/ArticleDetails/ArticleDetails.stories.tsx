@@ -9,6 +9,7 @@ import {
     ArticleType,
 } from '@/entities/Article/model/types/article';
 import { Theme } from '@/shared/const/theme';
+import { FeaturesFlagDecorator } from '@/shared/config/storybook/FeaturesFlagDecorator/FeaturesFlagDecorator';
 const article: Article = {
     id: '1',
     title: 'Javascript news',
@@ -112,4 +113,28 @@ export const Loading: Story = {
 export const Error: Story = {
     args: {},
     decorators: [StoreDecorator({ articleDetails: { error: 'error' } })],
+};
+export const NormalRedesigned: Story = {
+    args: {},
+    decorators: [
+        StoreDecorator({ articleDetails: { article } }),
+        FeaturesFlagDecorator({ isAppRedesigned: true }),
+        ThemeDecorator(Theme.LIGHT, 'app_redesigned'),
+    ],
+};
+export const DarkRedesigned: Story = {
+    args: {},
+    decorators: [
+        StoreDecorator({ articleDetails: { article } }),
+        FeaturesFlagDecorator({ isAppRedesigned: true }),
+        ThemeDecorator(Theme.DARK, 'app_redesigned'),
+    ],
+};
+export const LoadingRedesigned: Story = {
+    args: {},
+    decorators: [
+        StoreDecorator({ articleDetails: { isLoading: true } }),
+        FeaturesFlagDecorator({ isAppRedesigned: true }),
+        ThemeDecorator(Theme.DARK, 'app_redesigned'),
+    ],
 };

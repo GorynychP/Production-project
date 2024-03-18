@@ -4,26 +4,25 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Theme } from '@/shared/const/theme';
 import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Article } from '@/entities/Article';
+import { Article, ArticleType } from '@/entities/Article';
 const article: Article = {
     id: '1',
-    createdAt: '',
+    createdAt: '20.20.2010',
     blocks: [],
     img: '',
     subtitle: 'JavaScript',
     title: 'JavaScript',
-    type: [],
-    user: { id: '1', username: 'ivan' },
+    type: [ArticleType.IT],
+    user: { id: '1', username: 'admin' },
     views: 10,
 };
 const meta: Meta<typeof ArticleRecommendationsList> = {
     title: 'features/ArticleRecommendationsList',
     component: ArticleRecommendationsList,
-    decorators: [StoreDecorator({})],
     parameters: {
         mockData: [
             {
-                url: __API__ + '/articles?_limit=4',
+                url: __API__ + '/articles?limit=4&expand=user',
                 method: 'GET',
                 status: 200,
                 response: [
@@ -35,6 +34,7 @@ const meta: Meta<typeof ArticleRecommendationsList> = {
             },
         ],
     },
+    decorators: [StoreDecorator({})],
 };
 
 export default meta;

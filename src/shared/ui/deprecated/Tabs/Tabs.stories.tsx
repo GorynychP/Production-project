@@ -5,7 +5,7 @@ import { Tabs } from './Tabs';
 import { action } from '@storybook/addon-actions';
 import { Theme } from '@/shared/const/theme';
 const meta: Meta<typeof Tabs> = {
-    title: 'shared/Tabs',
+    title: 'shared/deprecated/Tabs',
     component: Tabs,
 };
 

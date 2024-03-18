@@ -4,8 +4,9 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { StarRating } from './StarRating';
 import { Theme } from '@/shared/const/theme';
 const meta: Meta<typeof StarRating> = {
-    title: 'shared/StarRating',
+    title: 'shared/redesigned/StarRating',
     component: StarRating,
+    decorators: [ThemeDecorator(Theme.LIGHT, 'app_redesigned')],
 };
 
 export default meta;
@@ -17,5 +18,5 @@ export const Normal: Story = {
 
 export const Dark: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.DARK)],
+    decorators: [ThemeDecorator(Theme.DARK, 'app_redesigned')],
 };

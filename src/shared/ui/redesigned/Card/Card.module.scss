@@ -1,14 +1,16 @@
 .Card {
     border-radius: 12px;
 }
+// border
 .normal {
     border-radius: 12px;
 }
-.light {
-    background: var(--light-bg-redesigned);
-}
 .round {
     border-radius: 40px;
+}
+//theme
+.light {
+    background: var(--light-bg-redesigned);
 }
 .default {
     background-color: var(--dark-bg-redesigned);
@@ -17,9 +19,13 @@
     background-color: var(--dark-bg-redesigned);
     border: 1px solid var(--accent-redesigned);
 }
+
+// width
 .max {
     width: 100%;
 }
+
+// padding
 .gap_0 {
     padding: 0px;
 }

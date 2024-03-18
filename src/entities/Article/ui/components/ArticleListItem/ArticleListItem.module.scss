@@ -87,6 +87,6 @@
         width: 200px;
         margin-top: 10px;
         white-space: nowrap;
-        text-overflow: ellipsis;
+        overflow: hidden;
     }
 }

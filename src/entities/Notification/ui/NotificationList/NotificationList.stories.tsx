@@ -4,6 +4,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Theme } from '@/shared/const/theme';
 import { NotificationList } from './NotificationList';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { FeaturesFlagDecorator } from '@/shared/config/storybook/FeaturesFlagDecorator/FeaturesFlagDecorator';
 const notification = {
     id: '1',
     title: 'Уведомление №1',
@@ -43,4 +44,20 @@ export const Normal: Story = {
 export const Dark: Story = {
     args: {},
     decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const NormalRedesigned: Story = {
+    args: {},
+    decorators: [
+        ThemeDecorator(Theme.LIGHT, 'app_redesigned'),
+        FeaturesFlagDecorator({ isAppRedesigned: true }),
+    ],
+};
+
+export const DarkRedesigned: Story = {
+    args: {},
+    decorators: [
+        ThemeDecorator(Theme.DARK, 'app_redesigned'),
+        FeaturesFlagDecorator({ isAppRedesigned: true }),
+    ],
 };

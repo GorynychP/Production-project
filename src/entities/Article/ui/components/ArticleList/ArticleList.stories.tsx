@@ -2,6 +2,9 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleList } from './ArticleList';
 import { Article, ArticleView } from '@/entities/Article/model/types/article';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
+import { FeaturesFlagDecorator } from '@/shared/config/storybook/FeaturesFlagDecorator/FeaturesFlagDecorator';
 const article = {
     id: '1',
     title: 'Javascript news, Что нового в JS за 2024 год?',
@@ -103,10 +106,45 @@ export const Big: Story = {
             .map((item, index) => ({ ...article, id: String(index) })),
     },
 };
+export const SmallRedesigned: Story = {
+    args: {
+        isLoading: false,
+        view: ArticleView.SMALL,
+        articles: new Array(15)
+            .fill(0)
+            .map((item, index) => ({ ...article, id: String(index) })),
+    },
+    decorators: [
+        ThemeDecorator(Theme.DARK, 'app_redesigned'),
+        FeaturesFlagDecorator({ isAppRedesigned: true }),
+    ],
+};
+
+export const BigRedesigned: Story = {
+    args: {
+        isLoading: false,
+        view: ArticleView.BIG,
+        articles: new Array(3)
+            .fill(0)
+            .map((item, index) => ({ ...article, id: String(index) })),
+    },
+    decorators: [
+        ThemeDecorator(Theme.DARK, 'app_redesigned'),
+        FeaturesFlagDecorator({ isAppRedesigned: true }),
+    ],
+};
 
 export const isLoading_1: Story = {
     args: { isLoading: true, view: ArticleView.BIG, articles: [] },
+    decorators: [
+        ThemeDecorator(Theme.DARK, 'app_redesigned'),
+        FeaturesFlagDecorator({ isAppRedesigned: true }),
+    ],
 };
 export const isLoading_2: Story = {
     args: { isLoading: true, view: ArticleView.SMALL, articles: [] },
+    decorators: [
+        ThemeDecorator(Theme.DARK, 'app_redesigned'),
+        FeaturesFlagDecorator({ isAppRedesigned: true }),
+    ],
 };

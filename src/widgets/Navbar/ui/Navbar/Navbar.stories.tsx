@@ -4,6 +4,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Navbar } from './Navbar';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Theme } from '@/shared/const/theme';
+import { NewDesignedDecorator } from '@/shared/config/storybook/NewDesignedDecorator/NewDesignedDecorator';
 
 const meta: Meta<typeof Navbar> = {
     title: 'widgets/Navbar',
@@ -12,9 +13,9 @@ const meta: Meta<typeof Navbar> = {
     // 	layout: 'centered',
     // },
     // tags: ['autodocs'],
-    argTypes: {
-        // backgroundColor: { control: 'color' },
-    },
+    // argTypes: {
+    //     // backgroundColor: { control: 'color' },
+    // },
 };
 
 export default meta;
@@ -33,6 +34,23 @@ export const AuthDark: Story = {
     args: {},
     decorators: [
         ThemeDecorator(Theme.DARK),
+        StoreDecorator({ user: { authData: {} } }),
+    ],
+};
+
+export const LightRedesigned: Story = {
+    args: {},
+    decorators: [StoreDecorator({}), NewDesignedDecorator()],
+};
+
+export const DarkRedesigned: Story = {
+    args: {},
+    decorators: [NewDesignedDecorator(Theme.DARK), StoreDecorator({})],
+};
+export const AuthDarkRedesigned: Story = {
+    args: {},
+    decorators: [
+        NewDesignedDecorator(Theme.DARK),
         StoreDecorator({ user: { authData: {} } }),
     ],
 };

@@ -5,8 +5,9 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof Text> = {
-    title: 'shared/Text',
+    title: 'shared/redesigned/Text',
     component: Text,
+    decorators: [ThemeDecorator(Theme.LIGHT, 'app_redesigned')],
 };
 
 export default meta;
@@ -23,13 +24,20 @@ export const Dark: Story = {
         title: 'Title ',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio delectus voluptas ut autem sunt esse architecto tempore repellat similique rerum.',
     },
-    decorators: [ThemeDecorator(Theme.DARK)],
+    decorators: [ThemeDecorator(Theme.DARK, 'app_redesigned')],
 };
 export const Error: Story = {
     args: {
         title: 'Title ',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio delectus voluptas ut autem sunt esse architecto tempore repellat similique rerum.',
         theme: 'error',
+    },
+};
+export const Accent: Story = {
+    args: {
+        title: 'Title ',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio delectus voluptas ut autem sunt esse architecto tempore repellat similique rerum.',
+        theme: 'accent',
     },
 };
 export const OnlyTitle: Story = {

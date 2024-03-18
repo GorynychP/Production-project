@@ -4,7 +4,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Popover } from './Popover';
 import { Theme } from '@/shared/const/theme';
 const meta: Meta<typeof Popover> = {
-    title: 'shared/Popups/Popover',
+    title: 'shared/deprecated/Popups/Popover',
     component: Popover,
 };
 

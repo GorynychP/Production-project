@@ -1,7 +1,7 @@
+import React, { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import cls from './UiDesignedSwitcher.module.scss';
-import { memo } from 'react';
 import { ListBox } from '@/shared/ui/redesigned/Popups';
 import { getFeatureFlag, updateFeatureFlag } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';

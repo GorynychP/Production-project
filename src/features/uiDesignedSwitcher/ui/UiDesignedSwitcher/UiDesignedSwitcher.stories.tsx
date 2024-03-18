@@ -1,22 +1,24 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';;
+import { Theme } from '@/shared/const/theme';
 import { UiDesignedSwitcher } from './UiDesignedSwitcher';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 const meta: Meta<typeof UiDesignedSwitcher> = {
-	title: 'features/UiDesignedSwitcher',
-	component: UiDesignedSwitcher,
+    title: 'features/UiDesignedSwitcher',
+    component: UiDesignedSwitcher,
+    decorators: [StoreDecorator({})],
 };
 
 export default meta;
 type Story = StoryObj<typeof UiDesignedSwitcher>;
 
 export const Normal: Story = {
-	args: {},
+    args: {},
 };
 
 export const Dark: Story = {
-	args: {},
-	decorators: [ThemeDecorator(Theme.DARK)],
+    args: {},
+    decorators: [ThemeDecorator(Theme.DARK)],
 };

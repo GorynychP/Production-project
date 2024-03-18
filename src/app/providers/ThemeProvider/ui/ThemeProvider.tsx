@@ -5,11 +5,11 @@ import { LOCAL_STORAGE_THEME_KEY } from '@/shared/const/localStorage';
 
 const defaultTheme =
     (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
+const fallbackTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme;
 interface ThemeProviderProps {
     children: ReactNode;
     initialTheme?: Theme;
 }
-const fallbackTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme;
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({
     children,
     initialTheme,

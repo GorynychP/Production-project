@@ -5,8 +5,9 @@ import { Theme } from '@/shared/const/theme';
 import { Card } from './Card';
 import { Text } from '../Text/Text';
 const meta: Meta<typeof Card> = {
-    title: 'shared/Card',
+    title: 'shared/redesigned/Card',
     component: Card,
+    decorators: [ThemeDecorator(Theme.LIGHT, 'app_redesigned')],
 };
 
 export default meta;
@@ -18,5 +19,5 @@ export const Normal: Story = {
 
 export const Dark: Story = {
     args: { children: <Text title="JavaScript" text="text text" /> },
-    decorators: [ThemeDecorator(Theme.DARK)],
+    decorators: [ThemeDecorator(Theme.DARK, 'app_redesigned')],
 };

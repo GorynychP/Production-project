@@ -9,6 +9,7 @@ import {
     ArticleBlockType,
     ArticleType,
 } from '@/entities/Article/model/types/article';
+import { NewDesignedDecorator } from '@/shared/config/storybook/NewDesignedDecorator/NewDesignedDecorator';
 const article: Article = {
     id: '1',
     title: 'Javascript news',
@@ -39,16 +40,15 @@ const article: Article = {
 const meta: Meta<typeof ArticlesPage> = {
     title: 'pages/Article/ArticlesPage',
     component: ArticlesPage,
-    decorators: [StoreDecorator()],
+    decorators: [StoreDecorator({})],
     parameters: {
         mockData: [
             {
                 url:
                     __API__ +
-                    '/articles?expand=user&limit=3&page=1&order=desc&sort=views&type=ALL&search=',
+                    '/articles/?expand=user&limit=3&page=1&order=desc&sort=views&q=',
                 method: 'GET',
                 status: 200,
-                delay: 1000,
                 response: [
                     { ...article, id: '1' },
                     { ...article, id: '2' },
@@ -69,4 +69,9 @@ export const Normal: Story = {
 export const Dark: Story = {
     args: {},
     decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const DarkRedesigned: Story = {
+    args: {},
+    decorators: [NewDesignedDecorator(Theme.DARK)],
 };

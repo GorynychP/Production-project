@@ -4,8 +4,9 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { ListBox } from './ListBox';
 import { Theme } from '@/shared/const/theme';
 const meta: Meta<typeof ListBox> = {
-    title: 'shared/Popups/ListBox',
+    title: 'shared/redesigned/Popups/ListBox',
     component: ListBox,
+    decorators: [ThemeDecorator(Theme.LIGHT, 'app_redesigned')],
 };
 
 export default meta;
@@ -37,5 +38,5 @@ export const Dark: Story = {
         ],
         onChange: (value: string) => {},
     },
-    decorators: [ThemeDecorator(Theme.DARK)],
+    decorators: [ThemeDecorator(Theme.DARK, 'app_redesigned')],
 };
