@@ -98,31 +98,29 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 
 ```typescript jsx
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-
+import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Button, ButtonSize, ButtonTheme } from './Button';
 import { Theme } from '@/shared/const/theme';
+import SettingsPage from './SettingsPage';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { NewDesignedDecorator } from '@/shared/config/storybook/NewDesignedDecorator/NewDesignedDecorator';
 
-export default {
-    title: 'shared/Button',
-    component: Button,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
-} as ComponentMeta<typeof Button>;
-
-const Template: ComponentStory<typeof Button> = args => <Button {...args} />;
-
-export const Primary = Template.bind({});
-Primary.args = {
-    children: 'Text',
+const meta: Meta<typeof SettingsPage> = {
+    title: 'pages/SettingsPage',
+    component: SettingsPage,
+    decorators: [StoreDecorator({}), NewDesignedDecorator()],
 };
 
-export const Clear = Template.bind({});
-Clear.args = {
-    children: 'Text',
-    theme: ButtonTheme.CLEAR,
+export default meta;
+type Story = StoryObj<typeof SettingsPage>;
+
+export const Normal: Story = {
+    args: {},
+};
+
+export const Dark: Story = {
+    args: {},
+    decorators: [NewDesignedDecorator(Theme.DARK)],
 };
 ```
 
