@@ -5,7 +5,12 @@ export interface UseInfiniteScrollOptions {
     triggerRef: MutableRefObject<HTMLElement>;
     wrapperRef?: MutableRefObject<HTMLElement>;
 }
-
+/**
+ * Хук позволяет легко реализовать бесконечную прокрутку на основе Intersection Observer API в React.
+ * @param callback
+ * @param wrapperRef Опциональная ссылка (ref) на обертку контента, в которой происходит прокрутка.
+ * @param triggerRef Ссылка (ref) на элемент, который будет служить "триггером" для вызова функции обратного вызова при его появлении в видимой области.
+ */
 export function useInfiniteScroll({
     callback,
     wrapperRef,

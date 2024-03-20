@@ -11,7 +11,11 @@ interface useModalProps {
     onClose?: () => void;
     animationDelay?: number;
 }
-
+/**
+ * Хук, который позволяет открывать и закрывать модалку + закрытие при нажатии на Escape
+ * @param props
+ * @returns
+ */
 export const useModal = (props: useModalProps) => {
     const { isOpen, onClose, animationDelay } = props;
     const [isClosing, setIsClosing] = useState(false);

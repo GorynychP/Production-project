@@ -7,7 +7,10 @@ interface UseThemeResult {
     changeTheme: () => void;
     theme: Theme;
 }
-
+/**
+ * Хук меняющий тему
+ * @returns
+ */
 export function useTheme(): UseThemeResult {
     const { theme, setTheme } = useContext(ThemeContext);
     const changeTheme = () => {
